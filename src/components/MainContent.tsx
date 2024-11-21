@@ -10,7 +10,7 @@ export const MainContent= ()=>{
                 <div className=" col-span-3 md:col-span-5">
                     <h1 className="font-montserrat font-extrabold text-4xl text-white">Your Notes</h1>
                 </div>
-                <div className=" col-span-10 md:col-span-5 grid gap-4 md:flex">
+                <div className=" col-span-10 md:col-span-5  gap-4 flex">
                     <div className="">
                         <Button leftIcon={<ShareIcon variant="md"/>}  variant="secondary" size="lg" onClick={()=>console.log("Hey")} text="Share Brain" ></Button> 
 
