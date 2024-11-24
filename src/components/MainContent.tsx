@@ -1,10 +1,12 @@
 import { Button } from "./ui/Button"
 import { PlusIcon } from "../icons/PlusIcon"
-import { Modal } from "./ui/Modal"
+import { Card } from "./ui/Card"
 import { ShareIcon } from "../icons/ShareIcon"
+import { ContentModal } from "./ui/ContentModal"
 export const MainContent= ()=>{
     return(
         <>
+        
         <div className="w-full h-screen bg-background px-6 pt-8 ">
             <div className="grid-cols-10   flex justify-between">
                 <div className=" col-span-3 md:col-span-5">
@@ -23,12 +25,8 @@ export const MainContent= ()=>{
             </div>
 
             <div className=" flex flex-wrap md:flex-row flex-col mt-10">
-                <Modal/>
-                <Modal/>
-                <Modal/>
-                <Modal/>
-                <Modal/>
-
+                <Card/>
+                
             </div>
         </div>
         </>

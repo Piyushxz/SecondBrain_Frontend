@@ -15,7 +15,8 @@ export default {
         secondaryColor:"#30436b",
         backgroundColor:"#0A1128",
         backgroundColor2:"#e3d9fb",
-        customGray:"#191919"
+        customGray:"#191919",
+        customBlue:"#78abfb"
 
       }
     },

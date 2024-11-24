@@ -1,5 +1,6 @@
 export interface IconProps{
-    variant:"sm" | "md" | "lg" |"xs"
+    variant:"sm" | "md" | "lg" |"xs",
+    onClick? : ()=>void
 }
 
 export const iconStyles = {
