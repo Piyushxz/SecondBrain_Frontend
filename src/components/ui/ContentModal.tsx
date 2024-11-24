@@ -18,12 +18,13 @@ export const ContentModal = () => {
 
                     <div className="flex pl-4 pr-4 py-4 flex justify-between items-center border-b border-gray-700">
                         <h1 className="font-montserrat font-extrabold text-2xl text-white ">Add Content</h1>
-                        <div className="p-2 hover:bg-gray-800 rounded-lg">
-                        <CloseIcon onClick={handleCloseModal} variant="sm" />
+                        <div onClick={handleCloseModal}
+                        className="p-2 hover:bg-gray-800 rounded-lg">
+                        <CloseIcon  variant="sm" />
                         </div>
                         
                     </div>
-                    <form>
+                    <form onSubmit={()=>console.log("Form")}> 
                         <div>
                             <Input label="Title" htmlFor="title" onChange={()=>{}} />
                         </div>
@@ -41,8 +42,7 @@ export const ContentModal = () => {
                         </div>
                         
 
-                        <div className="flex justify-between  pl-4 pr-4 py-4 border-t border-gray-700 mt-8">
-                            <Button variant="delete" size="lg"  text="Cancel " onClick={()=>{}}/>
+                        <div className="flex justify-center  pl-4 pr-4 py-4 border-t border-gray-700 mt-8">
                             <Button variant="primary"size="lg"  text="Add Content " onClick={()=>{}}/>
                            
                         </div>
