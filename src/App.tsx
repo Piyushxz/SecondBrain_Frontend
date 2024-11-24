@@ -1,16 +1,22 @@
-import { useState } from "react"
-import { Button } from "./components/ui/Button"
-import { PlusIcon } from "./icons/PlusIcon"
+
+
 import { Sidebar } from "./components/ui/Sidebar"
 import { MainContent } from "./components/MainContent"
 import { ContentModal } from "./components/ui/ContentModal"
-
+import { useRecoilValue } from "recoil"
+import {  toggleModal } from "./atoms"
 function App() {
-  const [count, setCount] = useState(0)
+
+
+  const isModalOpen = useRecoilValue(toggleModal)
 
   return (
     <>
-      <ContentModal/>
+      {
+        isModalOpen &&
+        <ContentModal/>
+      }
+      
       <div className="flex">
           <Sidebar size="lg"/>
           <MainContent/>

@@ -2,7 +2,7 @@ import { ReactElement } from "react"
 
 export interface ButtonProps{
     text:string,
-    variant:"primary" | "secondary",
+    variant:"primary" | "secondary" | "delete",
     size:"sm" | "md" | "lg",
     leftIcon? : ReactElement,
     endIcon? : ReactElement,
@@ -11,8 +11,9 @@ export interface ButtonProps{
 
 
 const variantStyles = {
-    "primary":" bg-primaryColor text-white",
-    "secondary":" bg-secondaryColor text-white"
+    "primary":" bg-primaryColor text-white hover:bg-primaryColor2",
+    "secondary":" bg-secondaryColor text-white hover:bg-primaryColor2",
+    "delete":"bg-red-700 text-white bg-red-400 "
 }
 
 const sizeStyles = {
@@ -22,7 +23,7 @@ const sizeStyles = {
 }
 
 const defaultStyles = {
-    "default":"font-montserrat font-normal hover:bg-primaryColor2 transition-all duration-300 "
+    "default":"font-montserrat font-normal  transition-all duration-300 "
 }
 
 

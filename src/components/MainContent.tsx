@@ -2,8 +2,14 @@ import { Button } from "./ui/Button"
 import { PlusIcon } from "../icons/PlusIcon"
 import { Card } from "./ui/Card"
 import { ShareIcon } from "../icons/ShareIcon"
-import { ContentModal } from "./ui/ContentModal"
+
+import { useSetRecoilState } from "recoil"
+import { toggleModal } from "../atoms"
 export const MainContent= ()=>{
+    const setModal = useSetRecoilState(toggleModal)
+    const handleOpenModal = () =>{
+        setModal(val =>!val);
+    }
     return(
         <>
         
@@ -14,11 +20,12 @@ export const MainContent= ()=>{
                 </div>
                 <div className=" col-span-10 md:col-span-5  gap-4 flex">
                     <div className="">
-                        <Button leftIcon={<ShareIcon variant="md"/>}  variant="secondary" size="lg" onClick={()=>console.log("Hey")} text="Share Brain" ></Button> 
+                        <Button 
+                         leftIcon={<ShareIcon variant="md"/>}  variant="secondary" size="lg" onClick={()=>console.log("Hey")} text="Share Brain" ></Button> 
 
                     </div>
                     <div >
-                        <Button leftIcon={<PlusIcon variant="md"/>}  variant="primary" size="lg" onClick={()=>console.log("Hey")} text="Add Content" ></Button> 
+                        <Button leftIcon={<PlusIcon variant="md"/>}  variant="primary" size="lg" onClick={handleOpenModal} text="Add Content" ></Button> 
 
                     </div>
                 </div>
