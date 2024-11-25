@@ -6,7 +6,8 @@ export interface ButtonProps{
     size:"sm" | "md" | "lg",
     leftIcon? : ReactElement,
     endIcon? : ReactElement,
-    onClick : ()=>void
+    onClick? : ()=>void,
+    type?:"button" | "submit" | "reset"
 }
 
 
@@ -31,7 +32,7 @@ export const Button =(props:ButtonProps)=>{
     return(
         <>
 
-        <button onClick={props.onClick} className={`${variantStyles[props.variant]} ${sizeStyles[props.size]} ${defaultStyles.default}`}>
+        <button  type={props.type}onClick={props.onClick} className={`${variantStyles[props.variant]} ${sizeStyles[props.size]} ${defaultStyles.default}`}>
           {props.leftIcon?
           <div className="flex items-center">
                 <div className="pr-2">{props.leftIcon}</div> 
