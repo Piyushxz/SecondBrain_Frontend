@@ -17,7 +17,8 @@ const [password,setPassword] = useState('')
                     
                    
                     <div className="mt-12 ml-4 mr-4">
-                    <Button variant="primary" size="wide" onClick={()=>{}}  text="Login"/>
+                    <Button isLoading={true}
+                    variant="primary" size="wide" onClick={()=>{}}  text="Login"/>
                     </div>
                 </div>
             </div>

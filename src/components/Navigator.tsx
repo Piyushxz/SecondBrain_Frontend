@@ -14,7 +14,7 @@ type navProps = {
   }: navProps) => {
     return (
       <>
-        <div className="flex h-16 min-w-96 bg-backgroundColor m-4 rounded-2xl">
+        <div className="flex h-16 w-96 bg-backgroundColor m-4 rounded-2xl ">
           <div
             onClick={onSignInClick}
             className={`w-1/2 hover:bg-secondaryColor transition duration-300 ${
