@@ -2,10 +2,14 @@ import { useState } from "react";
 import { LoginModal } from "../components/LoginModal";
 import { Navigator } from "../components/Navigator";
 import { SignUpModal } from "../components/SignUpModal";
-
+import PasswordAlertModal from "../components/PasswordAlert";
+import { useSetRecoilState } from "recoil";
+import { showAlertModal } from "../atoms";
 export const Login = () => {
   const [isSignInActive, setIsSignInActive] = useState(true);
   const [isSignUpActive, setIsSignUpActive] = useState(false);
+
+  const setShowAlert = useSetRecoilState(showAlertModal)
 
   const handleSignInClick = () => {
     setIsSignInActive(true);
@@ -15,10 +19,12 @@ export const Login = () => {
   const handleSignUpClick = () => {
     setIsSignInActive(false);
     setIsSignUpActive(true);
+  
   };
 
   return (
     <>
+      <PasswordAlertModal/>
       <div className="h-screen w-screen bg-gradient-to-b from-backgroundColor via-secondaryColor to-primaryColor2 flex flex-col justify-center items-center">
         <Navigator
           isSignInActive={isSignInActive}

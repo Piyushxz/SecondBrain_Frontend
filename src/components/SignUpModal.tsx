@@ -2,6 +2,7 @@ import { useState } from "react"
 import { Input } from "../components/ui/Input"
 import { Button } from "../components/ui/Button"
 import axios from "axios"
+import PasswordAlertModal from "./PasswordAlert"
 
 
 export const SignUpModal = ()=>{
@@ -15,6 +16,7 @@ const [email,setIsEmail] = useState('')
         try{
 
             setIsLoading(true)
+            console.log(email,username,password)
             const response = await axios.post("http://localhost:3003/api/v1/signup",{
                 email,
                 username,
@@ -22,9 +24,12 @@ const [email,setIsEmail] = useState('')
             })
             setIsLoading(false)
 
-            console.log(response)
+            setIsEmail("")
+            setPassword("")
+            setUsername("")
 
             console.log(response)
+
         }catch(err){
             setIsLoading(false)
             console.log("Req Failed")
@@ -34,6 +39,7 @@ const [email,setIsEmail] = useState('')
     }
     return(
         <>
+            
             <div className="w-96 h-[480px] bg-backgroundColor rounded-2xl border border-secondaryColor flex flex-col">
                 <h1 className="font-montserrat font-black text-4xl text-white text-center p-4">vX Brainly</h1>
                 <div className="flex flex-col">
@@ -45,7 +51,7 @@ const [email,setIsEmail] = useState('')
                     <div className="mt-12 ml-4 mr-4">
                     <Button 
                     isLoading={isLoading}
-                     variant="primary" size="wide" onClick={()=>{handleSignUpClick}}  text="Sign Up"/>
+                     variant="primary" size="wide" onClick={handleSignUpClick}  text="Sign Up"/>
                     </div>
                 </div>
             </div>

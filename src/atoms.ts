@@ -10,3 +10,9 @@ export const showSidebar = atom({
     key:"showSidebar",
     default:false
 })
+
+
+export const showAlertModal = atom({
+    key:"showAlertModal",
+    default:true
+})
