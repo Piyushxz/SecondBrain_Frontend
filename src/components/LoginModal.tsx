@@ -1,12 +1,23 @@
 import { useState } from "react"
 import { Input } from "../components/ui/Input"
 import { Button } from "../components/ui/Button"
+import { useRecoilState, useSetRecoilState,  } from "recoil"
+import { modalType, showAlertModal } from "../atoms"
+
 
 
 export const LoginModal = ()=>{
     
 const [username , setUsername] = useState('')
 const [password,setPassword] = useState('')
+const setshowAlert = useSetRecoilState(showAlertModal)
+const setModalType = useSetRecoilState(modalType)
+const handleLoginClick = () =>{
+    setModalType("LoginSuccess")
+    setshowAlert(true)
+
+    setTimeout(()=>{setshowAlert(false); setModalType("")},5000);
+}
     return(
         <>
             <div className="w-96 h-96 bg-backgroundColor rounded-2xl border border-secondaryColor flex flex-col">
@@ -17,8 +28,8 @@ const [password,setPassword] = useState('')
                     
                    
                     <div className="mt-12 ml-4 mr-4">
-                    <Button isLoading={false}
-                    variant="primary" size="wide" onClick={()=>{}}  text="Login"/>
+                    <Button isLoading={false} 
+                    variant="primary" size="wide" onClick={handleLoginClick}  text="Login"/>
                     </div>
                 </div>
             </div>

@@ -14,5 +14,10 @@ export const showSidebar = atom({
 
 export const showAlertModal = atom({
     key:"showAlertModal",
-    default:true
+    default:false
+})
+
+export const modalType = atom({
+    key:"modalType",
+    default:"LoginSuccess"
 })

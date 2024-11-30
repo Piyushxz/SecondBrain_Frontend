@@ -40,7 +40,7 @@ const setShowAlert = useSetRecoilState(showAlertModal)
     }
     return(
         <>
-            <PasswordAlertModal type="invalidPassword"/>
+         
             <div className="w-96 h-[480px] bg-backgroundColor rounded-2xl border border-secondaryColor flex flex-col">
                 <h1 className="font-montserrat font-black text-4xl text-white text-center p-4">vX Brainly</h1>
                 <div className="flex flex-col">
