@@ -10,15 +10,20 @@ import axios from "axios"
 export const LoginModal = ()=>{
     
 const [username , setUsername] = useState('')
+const [isLoading,setIsLoading] = useState(false)
 const [password,setPassword] = useState('')
 const setShowAlert = useSetRecoilState(showAlertModal)
 const setModalType = useSetRecoilState(modalType)
 const handleLoginClick = async () => {
     try {
+        setIsLoading(true)
         const response = await axios.post("http://localhost:3003/api/v1/signin", {
             username,
             password
         });
+        setIsLoading(false)
+        setUsername("")
+        setPassword("")
 
         console.log(response.status);
 
@@ -29,6 +34,7 @@ const handleLoginClick = async () => {
             setTimeout(() => setShowAlert(false), 5000);
         }
     } catch (err) {
+        setIsLoading(false)
         console.error(err);
 
         
@@ -38,7 +44,7 @@ const handleLoginClick = async () => {
             const { status } = err.response;
 
             if (status === 403) {
-                setModalType("invalidPassword");
+                setModalType("LoginFail");
                 setShowAlert(true);
 
                 setTimeout(() => setShowAlert(false), 5000);
@@ -62,7 +68,7 @@ const handleLoginClick = async () => {
                     
                    
                     <div className="mt-12 ml-4 mr-4">
-                    <Button isLoading={false} 
+                    <Button isLoading={isLoading} 
                     variant="primary" size="wide" onClick={handleLoginClick}  text="Login"/>
                     </div>
                 </div>

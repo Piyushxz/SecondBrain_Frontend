@@ -4,15 +4,17 @@ import { Button } from "../components/ui/Button"
 import axios from "axios"
 import { showAlertModal } from "../atoms"
 import { useSetRecoilState } from "recoil"
-import PasswordAlertModal from "./PasswordAlert"
+import { modalType } from "../atoms"
+
 
 export const SignUpModal = ()=>{
 const [isLoading,setIsLoading] = useState(false)
 const [username , setUsername] = useState('')
 const [password,setPassword] = useState('')
 const [email,setIsEmail] = useState('')
-const setShowAlert = useSetRecoilState(showAlertModal)
 
+const setShowAlert = useSetRecoilState(showAlertModal)
+const setModalType = useSetRecoilState(modalType)
     const handleSignUpClick = async ()=>{
         try{
 
@@ -23,17 +25,43 @@ const setShowAlert = useSetRecoilState(showAlertModal)
                 username,
                 password
             })
+            if (response.status === 200) {
+                setModalType("SignUpSuccess");
+                setShowAlert(true);
+    
+                setTimeout(() => setShowAlert(false), 5000);
+            }
             setIsLoading(false)
 
             setIsEmail("")
             setPassword("")
             setUsername("")
 
-            console.log(response)
+            
 
         }catch(err){
             setIsLoading(false)
             console.log("Req Failed")
+            console.error(err);
+
+        
+        //@ts-ignore
+        if (err.response) {
+            //@ts-ignore
+            const { status } = err.response;
+
+            if (status === 400 ) {
+                setModalType("invalidPassword");
+                setShowAlert(true);
+
+                setTimeout(() => setShowAlert(false), 5000);
+            } else if (status === 409) {
+                setModalType("SignUpFail");
+                setShowAlert(true);
+
+                setTimeout(() => setShowAlert(false), 5000);
+            }
+        } 
         }
 
 
