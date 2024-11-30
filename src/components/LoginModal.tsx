@@ -1,8 +1,9 @@
 import { useState } from "react"
 import { Input } from "../components/ui/Input"
 import { Button } from "../components/ui/Button"
-import { useRecoilState, useSetRecoilState,  } from "recoil"
+import {  useSetRecoilState,  } from "recoil"
 import { modalType, showAlertModal } from "../atoms"
+import axios from "axios"
 
 
 
@@ -10,14 +11,47 @@ export const LoginModal = ()=>{
     
 const [username , setUsername] = useState('')
 const [password,setPassword] = useState('')
-const setshowAlert = useSetRecoilState(showAlertModal)
+const setShowAlert = useSetRecoilState(showAlertModal)
 const setModalType = useSetRecoilState(modalType)
-const handleLoginClick = () =>{
-    setModalType("LoginSuccess")
-    setshowAlert(true)
+const handleLoginClick = async () => {
+    try {
+        const response = await axios.post("http://localhost:3003/api/v1/signin", {
+            username,
+            password
+        });
 
-    setTimeout(()=>{setshowAlert(false); setModalType("")},5000);
-}
+        console.log(response.status);
+
+        if (response.status === 200) {
+            setModalType("LoginSuccess");
+            setShowAlert(true);
+
+            setTimeout(() => setShowAlert(false), 5000);
+        }
+    } catch (err) {
+        console.error(err);
+
+        
+        //@ts-ignore
+        if (err.response) {
+            //@ts-ignore
+            const { status } = err.response;
+
+            if (status === 403) {
+                setModalType("invalidPassword");
+                setShowAlert(true);
+
+                setTimeout(() => setShowAlert(false), 5000);
+            } else if (status === 401) {
+                setModalType("LoginFail");
+                setShowAlert(true);
+
+                setTimeout(() => setShowAlert(false), 5000);
+            }
+        } 
+    }
+};
+
     return(
         <>
             <div className="w-96 h-96 bg-backgroundColor rounded-2xl border border-secondaryColor flex flex-col">
