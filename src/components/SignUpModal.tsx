@@ -2,15 +2,16 @@ import { useState } from "react"
 import { Input } from "../components/ui/Input"
 import { Button } from "../components/ui/Button"
 import axios from "axios"
+import { showAlertModal } from "../atoms"
+import { useSetRecoilState } from "recoil"
 import PasswordAlertModal from "./PasswordAlert"
-
 
 export const SignUpModal = ()=>{
 const [isLoading,setIsLoading] = useState(false)
 const [username , setUsername] = useState('')
 const [password,setPassword] = useState('')
 const [email,setIsEmail] = useState('')
-
+const setShowAlert = useSetRecoilState(showAlertModal)
 
     const handleSignUpClick = async ()=>{
         try{
@@ -39,7 +40,7 @@ const [email,setIsEmail] = useState('')
     }
     return(
         <>
-            
+            <PasswordAlertModal type="invalidPassword"/>
             <div className="w-96 h-[480px] bg-backgroundColor rounded-2xl border border-secondaryColor flex flex-col">
                 <h1 className="font-montserrat font-black text-4xl text-white text-center p-4">vX Brainly</h1>
                 <div className="flex flex-col">

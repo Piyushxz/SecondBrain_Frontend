@@ -24,7 +24,7 @@ export const Login = () => {
 
   return (
     <>
-      <PasswordAlertModal/>
+      <PasswordAlertModal type="invalidPassword"/>
       <div className="h-screen w-screen bg-gradient-to-b from-backgroundColor via-secondaryColor to-primaryColor2 flex flex-col justify-center items-center">
         <Navigator
           isSignInActive={isSignInActive}
