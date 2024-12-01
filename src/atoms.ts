@@ -21,3 +21,9 @@ export const modalType = atom({
     key:"modalType",
     default:"LoginSuccess"
 })
+
+
+export const contentModalType = atom({
+    key:"contentModalType",
+    default:"tweet"
+})
