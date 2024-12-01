@@ -13,7 +13,7 @@ export const MainContent= ()=>{
             <Navbar/>
 
             <div className=" flex flex-wrap md:flex-row flex-col">
-                <Card/>
+                <Card variant="links"/>
                 
             </div>
         </div>

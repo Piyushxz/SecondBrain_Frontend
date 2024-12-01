@@ -2,8 +2,11 @@ import { DeleteIcon } from "../../icons/DeleteIcon"
 import { DocumentIcon } from "../../icons/DocumentIcon"
 import { ShareIcon } from "../../icons/ShareIcon"
 
+interface cardProps  {
+    variant :"links"|"tweets"|"youtube"
+}
 
-export const Card = () =>{
+export const Card = (props:cardProps) =>{
     return(
         <>
         <div className="w-80 h-96   rounded-xl m-4 bg-[#1a2439]">
@@ -24,7 +27,18 @@ export const Card = () =>{
             </div>
 
             <div className="pl-4 pt-2">
-                <span className="font-montserrat text-[#B7B7B7] font-sm">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quas, error quis corrupti ducimus nostrum ab, fugiat doloribus, cupiditate obcaecati magnam magni tenetur. Praesentium tenetur laboriosam accusamus quae blanditiis pariatur asperiores?</span>
+                {
+                    props.variant==="links"?
+                    <span className="font-montserrat text-[#B7B7B7] font-sm">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quas, error quis corrupti ducimus nostrum ab, fugiat doloribus, cupiditate obcaecati magnam magni tenetur. Praesentium tenetur laboriosam accusamus quae blanditiis pariatur asperiores?</span>
+                    :
+                    props.variant ==="youtube"?
+                    <>
+                        
+                    </>
+                    :
+                    ""
+
+                }
             </div>
             <div className="flex pl-4 pt-2">
                 <p className="font-montserrat text-white bg-backgroundColor px-4 py-2 text-sm rounded-2xl ">#productivity</p>

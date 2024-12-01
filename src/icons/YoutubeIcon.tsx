@@ -4,7 +4,8 @@ import { iconStyles } from ".";
 export const YoutubeIcon = (props: IconProps) => {
     return (
         <>
-<svg xmlns="http://www.w3.org/2000/svg"   className={`${iconStyles[props.variant]}`}  height="800px" width="800px" version="1.1" id="Layer_1" viewBox="0 0 461.001 461.001"  fill="#000000">
+<svg xmlns="http://www.w3.org/2000/svg"   
+className={`${iconStyles[props.variant]}`}  height="800px" width="800px" version="1.1" id="Layer_1" viewBox="0 0 461.001 461.001"  fill="#FFFFFF">
 
 <g id="SVGRepo_bgCarrier" stroke-width="0"/>
 

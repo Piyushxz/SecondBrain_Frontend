@@ -11,7 +11,7 @@ const typeStyles = {
     SignUpFail:"text-red-800 bg-red-50 dark:bg-gray-800 dark:text-red-400 h-12",
     LoginFail: "text-red-800 bg-red-50 dark:bg-gray-800 dark:text-red-400 h-12",
     LoginSuccess: "text-green-800 bg-green-50 dark:bg-gray-800 dark:text-green-400 h-12",
-    SignUpSuccess:"text-red-800 bg-red-50 dark:bg-gray-800 dark:text-red-400 h-12",
+    SignUpSuccess:"text-green-800 bg-green-50 dark:bg-gray-800 dark:text-green-400 h-12",
     none:""
 }
 const alertContent = {
@@ -34,10 +34,10 @@ const PasswordAlertModal = (props:AlertModaProps) => {
   const showAlert = useRecoilValue(showAlertModal);
 
   return (
-    <div className={`w-screen top-0 left-0 fixed flex justify-center `}>
+    <div className={`w-screen top-0 left-0 max-h-12 fixed flex justify-center `}>
       <div
         className={` flex p-4 mt-8 text-sm  rounded-lg w-96 translate-all duration-500 ease-in-out ${
-          showAlert ? "translate-y-0 " : "-translate-y-64 "
+          showAlert ? "translate-y-0 " : "-translate-y-72 "
         } ${typeStyles[props.type]}`}
         role="alert"
       >
