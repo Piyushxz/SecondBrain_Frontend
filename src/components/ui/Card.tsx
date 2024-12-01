@@ -5,7 +5,10 @@ import { TwitterIcon } from "../../icons/TwitterIcon"
 import { YoutubeIcon } from "../../icons/YoutubeIcon"
 
 interface cardProps  {
-    variant :"links"|"tweets"|"youtube"
+    variant :"links"|"tweets"|"youtube",
+    title:string,
+    link:string
+
 }
 
 const iconStyles={
@@ -22,7 +25,7 @@ export const Card = (props:cardProps) =>{
             <div className="flex  justify-between p-4 items-center">
                 <div className="flex gap-2 items-center">
                     {iconStyles[props.variant]}
-                    <h1 className="font-montserrat font-semibold text-white text-lg">Project Ideas</h1>
+                    <h1 className="font-montserrat font-semibold text-white text-lg">{props.title}</h1>
                 </div>
                 <div className="flex gap-2">
                     <ShareIcon variant="md"/>
@@ -31,9 +34,6 @@ export const Card = (props:cardProps) =>{
 
             </div>
             
-            <div className="ml-4 mt-1">
-                <span className="font-montserrat text-white font-xs ">www.goolge.com</span>
-            </div>
 
             <div className="">
                 {
@@ -46,7 +46,7 @@ export const Card = (props:cardProps) =>{
                     props.variant ==="youtube"?
                     <div className="w-full p-2">
                         <iframe  
-                        src="https://www.youtube.com/embed/_ZsZ4-HyjCg?si=LBHNH9VKQ0do_ixH" 
+                        src={props.link.replace("watch","embed").replace("?v=","/")}
                         title="YouTube video player"
                          frameBorder="0"
                           allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" 
@@ -54,7 +54,15 @@ export const Card = (props:cardProps) =>{
                            allowFullScreen></iframe>
                     </div>
                     :
-                    ""
+                    props.variant==="tweets"?
+                    <div className=" flex justify-center object-fit">
+
+                        <blockquote className="twitter-tweet ">
+                        <a href={props.link.replace("x.com","twitter.com")}></a> 
+                        </blockquote> 
+                    </div>
+                    :
+                    null
 
                 }
             </div>

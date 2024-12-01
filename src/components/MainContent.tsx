@@ -13,9 +13,9 @@ export const MainContent= ()=>{
             <Navbar/>
 
             <div className=" flex flex-wrap md:flex-row flex-col">
-                <Card variant="links"/>
-                <Card variant="youtube"/>
-
+                <Card variant="links" title="Links" link=""/>
+                <Card variant="youtube"  title="Youtube" link="https://www.youtube.com/watch?v=_ZsZ4-HyjCg"/>
+                <Card variant="tweets" title="Tweet" link="https://x.com/kirat_tw/status/1862917945762120010?s=46&t=mQj74bG83n01Qu4CqzSUHA"/>
                 
             </div>
         </div>
