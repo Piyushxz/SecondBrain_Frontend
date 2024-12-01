@@ -14,6 +14,8 @@ export const MainContent= ()=>{
 
             <div className=" flex flex-wrap md:flex-row flex-col">
                 <Card variant="links"/>
+                <Card variant="youtube"/>
+
                 
             </div>
         </div>
