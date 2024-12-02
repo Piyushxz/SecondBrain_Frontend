@@ -16,6 +16,7 @@ export const MainContent= ()=>{
 
             <div className=" flex flex-wrap md:flex-row flex-col">
                 {
+                    
                     contents.map(({_id,type,link,text,title})=>
                         
                         <Card key={_id}

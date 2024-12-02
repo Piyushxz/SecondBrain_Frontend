@@ -2,7 +2,7 @@ import { useRecoilValue } from "recoil";
 import { showAlertModal } from "../atoms";
 
 
-interface AlertModaProps{
+export interface AlertModaProps{
     type :"invalidPassword" | "SignUpFail" |"SignUpSuccess" | "LoginFail" |"LoginSuccess" |"none"
 }
 

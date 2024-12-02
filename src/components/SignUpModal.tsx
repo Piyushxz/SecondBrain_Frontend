@@ -5,9 +5,12 @@ import axios from "axios"
 import { showAlertModal } from "../atoms"
 import { useSetRecoilState } from "recoil"
 import { modalType } from "../atoms"
+import { useAlert } from "../hooks/utils"
 
 
 export const SignUpModal = ()=>{
+
+const setAlert = useAlert()
 const [isLoading,setIsLoading] = useState(false)
 const [username , setUsername] = useState('')
 const [password,setPassword] = useState('')
@@ -15,6 +18,8 @@ const [email,setIsEmail] = useState('')
 
 const setShowAlert = useSetRecoilState(showAlertModal)
 const setModalType = useSetRecoilState(modalType)
+
+
     const handleSignUpClick = async ()=>{
         try{
 
@@ -26,10 +31,12 @@ const setModalType = useSetRecoilState(modalType)
                 password
             })
             if (response.status === 200) {
-                setModalType("SignUpSuccess");
-                setShowAlert(true);
+                // setModalType("SignUpSuccess");
+                // setShowAlert(true);
     
-                setTimeout(() => setShowAlert(false), 5000);
+                // setTimeout(() => setShowAlert(false), 5000);
+
+                setAlert("SignUpSuccess")
             }
             setIsLoading(false)
 
@@ -51,15 +58,17 @@ const setModalType = useSetRecoilState(modalType)
             const { status } = err.response;
 
             if (status === 400 ) {
-                setModalType("invalidPassword");
-                setShowAlert(true);
+                // setModalType("invalidPassword");
+                // setShowAlert(true);
 
-                setTimeout(() => setShowAlert(false), 5000);
+                // setTimeout(() => setShowAlert(false), 5000);
+                setAlert("invalidPassword")
             } else if (status === 409) {
-                setModalType("SignUpFail");
-                setShowAlert(true);
+                // setModalType("SignUpFail");
+                // setShowAlert(true);
 
-                setTimeout(() => setShowAlert(false), 5000);
+                // setTimeout(() => setShowAlert(false), 5000);
+                setAlert("SignUpFail")
             }
         } 
         }

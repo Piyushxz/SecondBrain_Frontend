@@ -17,8 +17,12 @@ function App() {
   const alertType = useRecoilValue(modalType)
   return (
     <>
-<PasswordAlertModal type={alertType === "LoginSuccess" ? "LoginSuccess" : alertType === "LoginFail" ? "LoginFail" :alertType ==="SignUpSuccess"?"SignUpSuccess":alertType === "SignUpFail" ?"SignUpFail":alertType==="invalidPassword"?"invalidPassword": "none"} />
-{
+    { 
+      //@ts-ignore
+      <PasswordAlertModal type={alertType} />
+      }
+    
+    {
         isModalOpen &&
         <ContentModal/>
       }
