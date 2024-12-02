@@ -3,6 +3,7 @@ import { Input } from "../components/ui/Input"
 import { Button } from "../components/ui/Button"
 import {  useSetRecoilState,  } from "recoil"
 import { modalType, showAlertModal } from "../atoms"
+import { useNavigate } from "react-router-dom"
 import axios from "axios"
 
 
@@ -12,6 +13,8 @@ export const LoginModal = ()=>{
 const [username , setUsername] = useState('')
 const [isLoading,setIsLoading] = useState(false)
 const [password,setPassword] = useState('')
+const navigate = useNavigate()
+
 const setShowAlert = useSetRecoilState(showAlertModal)
 const setModalType = useSetRecoilState(modalType)
 const handleLoginClick = async () => {
@@ -32,6 +35,12 @@ const handleLoginClick = async () => {
             setShowAlert(true);
 
             setTimeout(() => setShowAlert(false), 5000);
+
+            const token = response.data.token;
+
+            localStorage.setItem("token",token)
+            
+            navigate("/dashboard")
         }
     } catch (err) {
         setIsLoading(false)
