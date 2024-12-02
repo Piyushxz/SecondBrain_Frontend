@@ -5,11 +5,12 @@ import {  useSetRecoilState,  } from "recoil"
 import { modalType, showAlertModal } from "../atoms"
 import { useNavigate } from "react-router-dom"
 import axios from "axios"
+import { useAlert } from "../hooks/utils"
 
 
 
 export const LoginModal = ()=>{
-    
+const setAlert = useAlert()
 const [username , setUsername] = useState('')
 const [isLoading,setIsLoading] = useState(false)
 const [password,setPassword] = useState('')
@@ -31,10 +32,11 @@ const handleLoginClick = async () => {
         console.log(response.status);
 
         if (response.status === 200) {
-            setModalType("LoginSuccess");
-            setShowAlert(true);
+            // setModalType("LoginSuccess");
+            // setShowAlert(true);
 
-            setTimeout(() => setShowAlert(false), 5000);
+            // setTimeout(() => setShowAlert(false), 5000);
+            setAlert("LoginSuccess")
 
             const token = response.data.token;
 
@@ -53,15 +55,19 @@ const handleLoginClick = async () => {
             const { status } = err.response;
 
             if (status === 403) {
-                setModalType("LoginFail");
-                setShowAlert(true);
+                // setModalType("LoginFail");
+                // setShowAlert(true);
 
-                setTimeout(() => setShowAlert(false), 5000);
+                // setTimeout(() => setShowAlert(false), 5000);
+
+                setAlert("LoginFail");
             } else if (status === 401) {
-                setModalType("LoginFail");
-                setShowAlert(true);
+                // setModalType("LoginFail");
+                // setShowAlert(true);
 
-                setTimeout(() => setShowAlert(false), 5000);
+                // setTimeout(() => setShowAlert(false), 5000);
+                setAlert("LoginFail");
+
             }
         } 
     }

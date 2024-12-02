@@ -7,8 +7,10 @@ import { Button } from "./Button";
 import { useState } from "react";
 import { Options } from "./Options";
 import axios from "axios";
+import { useAlert } from "../../hooks/utils";
 
 export const ContentModal = () => {
+    const showAlert = useAlert() 
     const isModalOpen = useRecoilValue(toggleModal)
     const setModal = useSetRecoilState(toggleModal)
 
@@ -64,8 +66,11 @@ export const ContentModal = () => {
             })
             console.log(response)
             handleCloseModal()
+            showAlert("contentAddSuccess")
         }catch(err){
             console.log(err)
+            showAlert("contentAddFail")
+
         }
     }
 

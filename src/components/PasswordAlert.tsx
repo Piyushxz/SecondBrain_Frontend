@@ -3,7 +3,7 @@ import { showAlertModal } from "../atoms";
 
 
 export interface AlertModaProps{
-    type :"invalidPassword" | "SignUpFail" |"SignUpSuccess" | "LoginFail" |"LoginSuccess" |"none"
+    type :"invalidPassword" | "SignUpFail" |"SignUpSuccess" | "LoginFail" |"LoginSuccess" |"none" |"contentAddSuccess" |"contentAddFail",
 }
 
 const typeStyles = {
@@ -12,6 +12,9 @@ const typeStyles = {
     LoginFail: "text-red-800 bg-red-50 dark:bg-gray-800 dark:text-red-400 h-12",
     LoginSuccess: "text-green-800 bg-green-50 dark:bg-gray-800 dark:text-green-400 h-12",
     SignUpSuccess:"text-green-800 bg-green-50 dark:bg-gray-800 dark:text-green-400 h-12",
+    contentAddSuccess:"text-green-800 bg-green-50 dark:bg-gray-800 dark:text-green-400 h-12",
+    contentAddFail:"text-red-800 bg-red-50 dark:bg-gray-800 dark:text-red-400 h-12",
+  
     none:""
 }
 const alertContent = {
@@ -28,6 +31,8 @@ const alertContent = {
     SignUpSuccess: <span className="font-medium">Sign-up successful! Welcome aboard.</span>,
     LoginFail: <span className="font-medium">Login failed. Please check your credentials.</span>,
     LoginSuccess: <span className="font-medium">Login successful! Redirecting...</span>,
+    contentAddSuccess: <span className="font-medium">Content Added Successfully</span>,
+    contentAddFail:<span className="font-medium">Could Not Add Content</span>,
     none:<span>Test</span>
 };
 const PasswordAlertModal = (props:AlertModaProps) => {
