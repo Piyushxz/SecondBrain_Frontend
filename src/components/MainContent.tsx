@@ -3,9 +3,11 @@ import { Card } from "./ui/Card"
 
 
 import { toggleModal } from "../atoms"
+import { useContent } from "../hooks/useContent"
 import { Navbar } from "./Navbar"
 export const MainContent= ()=>{
-
+    const contents = useContent();
+    console.log(contents)
     return(
         <>
         
@@ -13,10 +15,16 @@ export const MainContent= ()=>{
             <Navbar/>
 
             <div className=" flex flex-wrap md:flex-row flex-col">
-                <Card variant="links" title="Links" link=""/>
-                <Card variant="youtube"  title="Youtube" link="https://www.youtube.com/watch?v=_ZsZ4-HyjCg"/>
-                <Card variant="tweets" title="Tweet" link="https://x.com/kirat_tw/status/1862917945762120010?s=46&t=mQj74bG83n01Qu4CqzSUHA"/>
-                
+                {
+                    contents.map(({_id,type,link,text,title})=>
+                        
+                        <Card key={_id}
+                        variant={type}
+                         link={link} 
+                         text={text} 
+                         title={title}/>
+                    )
+                }
             </div>
         </div>
         </>

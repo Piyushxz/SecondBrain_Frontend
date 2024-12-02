@@ -5,16 +5,17 @@ import { TwitterIcon } from "../../icons/TwitterIcon"
 import { YoutubeIcon } from "../../icons/YoutubeIcon"
 
 interface cardProps  {
-    variant :"links"|"tweets"|"youtube",
+    variant :"links"|"tweet"|"youtube",
     title:string,
-    link:string
+    link:string,
+    text:string
 
 }
 
 const iconStyles={
     links:  <DocumentIcon variant="lg"/>,
     youtube:<YoutubeIcon variant="lg"/>,
-    tweets:<TwitterIcon variant="lg"/>
+    tweet:<TwitterIcon variant="lg"/>
 
 }
 
@@ -39,7 +40,7 @@ export const Card = (props:cardProps) =>{
                 {
                     props.variant==="links"?
                     <div className="pl-4 pt-2">
-                        <span className="font-montserrat text-[#B7B7B7] font-sm">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quas, error quis corrupti ducimus nostrum ab, fugiat doloribus, cupiditate obcaecati magnam magni tenetur. Praesentium tenetur laboriosam accusamus quae blanditiis pariatur asperiores?</span>
+                        <span className="font-montserrat text-[#B7B7B7] font-sm">{props.text}</span>
 
                     </div>
                     :
@@ -54,7 +55,7 @@ export const Card = (props:cardProps) =>{
                            allowFullScreen></iframe>
                     </div>
                     :
-                    props.variant==="tweets"?
+                    props.variant==="tweet"?
                     <div className=" flex justify-center object-fit">
 
                         <blockquote className="twitter-tweet ">
