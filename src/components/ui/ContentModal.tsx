@@ -6,6 +6,7 @@ import { Input } from "./Input";
 import { Button } from "./Button";
 import { useState } from "react";
 import { Options } from "./Options";
+import axios from "axios";
 
 export const ContentModal = () => {
     const isModalOpen = useRecoilValue(toggleModal)
@@ -37,7 +38,7 @@ export const ContentModal = () => {
         console.log(content)
     }
 
-    const handleAddContentClick = (e: React.FormEvent<HTMLFormElement>) => {
+    const handleAddContentClick = async (e: React.FormEvent<HTMLFormElement>) => {
         e.preventDefault();
         console.log({
             title,
@@ -46,6 +47,26 @@ export const ContentModal = () => {
             tags,
             content
         });
+
+        try{
+            const response  = await axios.post("http://localhost:3003/api/v1/content",{
+                title,
+                link,
+                type:contentModalT,
+                content,
+
+                
+
+            },{
+                headers:{
+                    Authorization:localStorage.getItem("token")
+                }
+            })
+            console.log(response)
+            handleCloseModal()
+        }catch(err){
+            console.log(err)
+        }
     }
 
     return (

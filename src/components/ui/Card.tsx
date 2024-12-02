@@ -5,7 +5,7 @@ import { TwitterIcon } from "../../icons/TwitterIcon"
 import { YoutubeIcon } from "../../icons/YoutubeIcon"
 
 interface cardProps  {
-    variant :"links"|"tweet"|"youtube",
+    variant :"link"|"tweet"|"youtube",
     title:string,
     link:string,
     text:string
@@ -13,7 +13,7 @@ interface cardProps  {
 }
 
 const iconStyles={
-    links:  <DocumentIcon variant="lg"/>,
+    link:  <DocumentIcon variant="lg"/>,
     youtube:<YoutubeIcon variant="lg"/>,
     tweet:<TwitterIcon variant="lg"/>
 
@@ -38,7 +38,7 @@ export const Card = (props:cardProps) =>{
 
             <div className="">
                 {
-                    props.variant==="links"?
+                    props.variant==="link"?
                     <div className="pl-4 pt-2">
                         <span className="font-montserrat text-[#B7B7B7] font-sm">{props.text}</span>
 
