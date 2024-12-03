@@ -117,7 +117,7 @@ export const ContentModal = () => {
                         </div>
                         <div className="flex gap-2 m-4 w-[450px]">
                             {
-                                finaltags.map((tag,index)=>< Tags text={tag} key={index}/>)
+                                finaltags.map((tag,index)=>< Tags variant="modal" text={tag} key={index}/>)
                             }
                         </div>
                         {
