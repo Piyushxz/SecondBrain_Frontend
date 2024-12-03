@@ -5,7 +5,7 @@ import {  useSetRecoilState,  } from "recoil"
 import { modalType, showAlertModal } from "../atoms"
 import { useNavigate } from "react-router-dom"
 import axios from "axios"
-import { useAlert } from "../hooks/utils"
+import { useAlert } from "../hooks/useAlert"
 
 
 
@@ -55,20 +55,15 @@ const handleLoginClick = async () => {
             const { status } = err.response;
 
             if (status === 403) {
-                // setModalType("LoginFail");
-                // setShowAlert(true);
 
-                // setTimeout(() => setShowAlert(false), 5000);
 
                 setAlert("LoginFail");
             } else if (status === 401) {
-                // setModalType("LoginFail");
-                // setShowAlert(true);
 
-                // setTimeout(() => setShowAlert(false), 5000);
                 setAlert("LoginFail");
 
             }
+ 
         } 
     }
 };

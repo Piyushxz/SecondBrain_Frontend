@@ -5,7 +5,7 @@ import axios from "axios"
 import { showAlertModal } from "../atoms"
 import { useSetRecoilState } from "recoil"
 import { modalType } from "../atoms"
-import { useAlert } from "../hooks/utils"
+import { useAlert } from "../hooks/useAlert"
 
 
 export const SignUpModal = ()=>{

@@ -67,9 +67,9 @@ export const Card = (props:cardProps) =>{
 
                 }
             </div>
-            <div className="flex pl-4 pt-2">
+            <div className="flex pl-4 pt-2 gap-2">
                 <p className="font-montserrat text-white bg-backgroundColor px-4 py-2 text-sm rounded-2xl ">#productivity</p>
-                <p className="ml-2 font-montserrat text-white bg-backgroundColor px-4 py-2 text-sm rounded-2xl">#idea</p>
+                <p className=" font-montserrat text-white bg-backgroundColor px-4 py-2 text-sm rounded-2xl">#idea</p>
             </div>
         </div>
         </>

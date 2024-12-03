@@ -7,7 +7,9 @@ import { Button } from "./Button";
 import { useState } from "react";
 import { Options } from "./Options";
 import axios from "axios";
-import { useAlert } from "../../hooks/utils";
+import { useAlert } from "../../hooks/useAlert";
+import { isValidString } from "../../utils";
+import { Tags } from "./Tags";
 
 export const ContentModal = () => {
     const showAlert = useAlert() 
@@ -16,6 +18,8 @@ export const ContentModal = () => {
 
     const contentModalT = useRecoilValue(contentModalType)
     const [title, setTitle] = useState("")
+
+    const [finaltags,setFinalTags] = useState([])
   
     const [link, setLink] = useState("")
     const [tags, setTags] = useState("")
@@ -39,6 +43,15 @@ export const ContentModal = () => {
         setContent(e.target.value);
         console.log(content)
     }
+
+
+    const handleAddTagFinalList = ()=>{
+        if(isValidString(tags)){
+            //@ts-ignore
+            setFinalTags(prev=> [...prev,tags])
+        }
+    }
+    console.log(finaltags)
 
     const handleAddContentClick = async (e: React.FormEvent<HTMLFormElement>) => {
         e.preventDefault();
@@ -95,10 +108,17 @@ export const ContentModal = () => {
                             <Options/>
                         </div>
                         <div>
-                            <Input label="Link(Optional)" value={link} htmlFor="link" onChange={handleLinkChange} />
+                            <Input label="Link" value={link} htmlFor="link" onChange={handleLinkChange} />
                         </div>
-                        <div>
+                        <div className="flex ">
                             <Input label="Tags" htmlFor="tags" value={tags} onChange={handleTagsChange} />
+                            <button onClick={handleAddTagFinalList}
+                            className="px-4 rounded-lg mr-12 mt-14  text-md font-medium text-white dark:text-white font-montserrat bg-primaryColor max-h-12 hover:bg-primaryColor2 transition ease-in-out">Add</button>
+                        </div>
+                        <div className="flex gap-2 m-4 w-[450px]">
+                            {
+                                finaltags.map((tag,index)=>< Tags text={tag} key={index}/>)
+                            }
                         </div>
                         {
                             contentModalT === "link" &&
