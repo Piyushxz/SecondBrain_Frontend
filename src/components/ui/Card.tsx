@@ -8,7 +8,8 @@ interface cardProps  {
     variant :"link"|"tweet"|"youtube",
     title:string,
     link:string,
-    text:string
+    text:string,
+    openDeleteModal:()=>void
 
 }
 
@@ -30,7 +31,10 @@ export const Card = (props:cardProps) =>{
                 </div>
                 <div className="flex gap-2">
                     <ShareIcon variant="md"/>
-                    <DeleteIcon variant="md"/>
+                    <div onClick={props.openDeleteModal}>
+                    <DeleteIcon variant="md" />
+
+                    </div>
                 </div>
 
             </div>

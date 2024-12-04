@@ -1,13 +1,21 @@
 
 import { Card } from "./ui/Card"
-
-
 import { toggleModal } from "../atoms"
 import { useContent } from "../hooks/useContent"
+import { showDeleteModal } from "../atoms"
 import { Navbar } from "./Navbar"
+import { useSetRecoilState } from "recoil"
 export const MainContent= ()=>{
+
+    const setDeleteModal = useSetRecoilState(showDeleteModal)
+
     const contents = useContent();
     console.log(contents)
+
+    const handleDeleteContent = (id:string)=>{
+        setDeleteModal(val =>!val)
+        console.log("BUtton clicked",id)
+    }
     return(
         <>
         
@@ -23,7 +31,9 @@ export const MainContent= ()=>{
                         variant={type}
                          link={link} 
                          text={text} 
-                         title={title}/>
+                         title={title}
+                         openDeleteModal={()=>handleDeleteContent(_id)}
+                         />
                     )
                 }
             </div>

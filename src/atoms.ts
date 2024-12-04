@@ -27,3 +27,8 @@ export const contentModalType = atom({
     key:"contentModalType",
     default:"tweet"
 })
+
+export const showDeleteModal = atom({
+    key:"showDeleteModal",
+    default:false
+})

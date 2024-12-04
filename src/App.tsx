@@ -11,10 +11,12 @@ import { Home } from "./pages/Home"
 import { Login } from "./pages/Login"
 import PasswordAlertModal from "./components/PasswordAlert"
 import { DeleteContent } from "./components/DeleteContent"
+import { showDeleteModal } from "./atoms"
 function App() {
 
 
   const isModalOpen = useRecoilValue(toggleModal)
+  const deleteModalOpen = useRecoilValue(showDeleteModal)
   const alertType = useRecoilValue(modalType)
   return (
     <>
@@ -28,7 +30,11 @@ function App() {
         <ContentModal/>
       }
 
-      * <DeleteContent/> 
+      {
+        deleteModalOpen &&
+        <DeleteContent/> 
+      }
+      
   
       <Routes>
         <Route path="/" element={<Home/>}/>
