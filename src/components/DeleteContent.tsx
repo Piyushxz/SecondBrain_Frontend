@@ -5,11 +5,14 @@ import { InfoIcon } from "../icons/InfoIcon"
 import { activeIdForDeletion } from "../atoms"
 import { Button } from "./ui/Button"
 import axios from "axios"
+import { useAlert } from "../hooks/useAlert"
 
 export const DeleteContent = () =>{
     const activeId= useRecoilState(activeIdForDeletion)
     const setDeleteModal = useSetRecoilState(showDeleteModal)
 
+
+    const setAlert = useAlert()
     const handleDeleteContent = async ()=>{
         try{
             const response = await axios({
@@ -23,8 +26,11 @@ export const DeleteContent = () =>{
 
             console.log(response)
             setDeleteModal(val =>!val)
+            setAlert("contentDeleteSuccess")
         }catch(err){
             console.log(err)
+            setAlert("contentDeleteFail")
+
         }
     }
     return(
