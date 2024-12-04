@@ -32,3 +32,8 @@ export const showDeleteModal = atom({
     key:"showDeleteModal",
     default:false
 })
+
+export const activeIdForDeletion = atom({
+    key:"activeIdForDeletion",
+    default:""
+})

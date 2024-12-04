@@ -5,15 +5,18 @@ import { useContent } from "../hooks/useContent"
 import { showDeleteModal } from "../atoms"
 import { Navbar } from "./Navbar"
 import { useSetRecoilState } from "recoil"
+import { activeIdForDeletion } from "../atoms"
 export const MainContent= ()=>{
 
     const setDeleteModal = useSetRecoilState(showDeleteModal)
+    const setActiveId = useSetRecoilState(activeIdForDeletion)
 
     const contents = useContent();
     console.log(contents)
 
     const handleDeleteContent = (id:string)=>{
         setDeleteModal(val =>!val)
+        setActiveId(id)
         console.log("BUtton clicked",id)
     }
     return(
