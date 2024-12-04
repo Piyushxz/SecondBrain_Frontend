@@ -10,6 +10,7 @@ import { Route } from "react-router-dom"
 import { Home } from "./pages/Home"
 import { Login } from "./pages/Login"
 import PasswordAlertModal from "./components/PasswordAlert"
+import { DeleteContent } from "./components/DeleteContent"
 function App() {
 
 
@@ -26,6 +27,8 @@ function App() {
         isModalOpen &&
         <ContentModal/>
       }
+
+      * <DeleteContent/> 
   
       <Routes>
         <Route path="/" element={<Home/>}/>

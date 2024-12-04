@@ -8,7 +8,6 @@ import axios from "axios"
 import { useAlert } from "../hooks/useAlert"
 
 
-
 export const LoginModal = ()=>{
 const setAlert = useAlert()
 const [username , setUsername] = useState('')
