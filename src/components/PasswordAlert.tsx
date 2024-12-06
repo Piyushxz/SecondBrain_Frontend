@@ -3,7 +3,9 @@ import { showAlertModal } from "../atoms";
 
 
 export interface AlertModaProps{
-    type :"invalidPassword" | "SignUpFail" |"SignUpSuccess" | "LoginFail" |"LoginSuccess" |"none" |"contentAddSuccess" |"contentAddFail"|"contentDeleteSuccess" |"contentDeleteFail",
+    type :"invalidPassword" | "SignUpFail" |"SignUpSuccess" | "LoginFail" |"LoginSuccess" |"none" |
+    "contentAddSuccess" |"contentAddFail"|"contentDeleteSuccess" |"contentDeleteFail"|
+    "contentLinkCopied",
 }
 
 const typeStyles = {
@@ -16,6 +18,7 @@ const typeStyles = {
     contentAddFail:"text-red-800 bg-red-50 dark:bg-gray-800 dark:text-red-400 h-12",
     contentDeleteSuccess:"text-green-800 bg-green-50 dark:bg-gray-800 dark:text-green-400 h-12",
     contentDeleteFail:"text-red-800 bg-red-50 dark:bg-gray-800 dark:text-red-400 h-12",
+    contentLinkCopied:"text-black bg-white dark:bg-gray-800 dark:text-white h-12",
   
     none:""
 }
@@ -37,7 +40,7 @@ const alertContent = {
     contentAddFail:<span className="font-medium">Could Not Add Content</span>,
     contentDeleteSuccess:<span className="font-medium">Content Deleted Successfully</span>,
     contentDeleteFail:<span className="font-medium">Could Not delete Content</span>,
-
+    contentLinkCopied:<span className="font-medium">Link Copied</span>,
     none:<span>Test</span>
 };
 const PasswordAlertModal = (props:AlertModaProps) => {

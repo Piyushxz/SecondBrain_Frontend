@@ -1,7 +1,6 @@
 import { modalType } from "../atoms"
 import { showAlertModal } from "../atoms"
 import { useSetRecoilState } from "recoil"
-import { AlertModaProps } from "../components/PasswordAlert"
 
 
 export const useAlert = ()=>{
@@ -9,11 +8,11 @@ export const useAlert = ()=>{
     const setModalType = useSetRecoilState(modalType)
 
 
-    return function(type:string){
+    return function(type:string,ms:number=5000){
         setShowAlert(true)
         setModalType(type)
     
-        setTimeout(() => setShowAlert(false), 5000);
+        setTimeout(() => setShowAlert(false), ms);
     }
 
     

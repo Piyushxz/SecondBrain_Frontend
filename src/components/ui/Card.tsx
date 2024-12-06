@@ -1,3 +1,4 @@
+import { useAlert } from "../../hooks/useAlert"
 import { DeleteIcon } from "../../icons/DeleteIcon"
 import { DocumentIcon } from "../../icons/DocumentIcon"
 import { ShareIcon } from "../../icons/ShareIcon"
@@ -21,17 +22,28 @@ const iconStyles={
 }
 
 export const Card = (props:cardProps) =>{
+
+    const showAlert = useAlert()
+    const copyToClipboard = ()=>{
+        navigator.clipboard.writeText(props.link)
+
+        showAlert("contentLinkCopied");
+    }
     return(
         <>
         <div className="w-80 h-96   rounded-xl m-4 bg-[#1a2439]">
             <div className="flex  justify-between p-4 items-center">
                 <div className="flex gap-2 items-center">
                     {iconStyles[props.variant]}
-                    <h1 className="font-montserrat font-semibold text-white text-lg">{props.title}</h1>
+                    <h1 className="font-montserrat font-semibold text-white text-lg pl-2">{props.title}</h1>
                 </div>
                 <div className="flex gap-2">
+                    <div onClick={copyToClipboard}
+                    className="hover:bg-secondaryColor p-1 transition ease-in-out rounded-lg">
                     <ShareIcon variant="md"/>
-                    <div onClick={props.openDeleteModal}>
+
+                    </div>
+                    <div onClick={props.openDeleteModal} className="hover:bg-secondaryColor p-1 transition ease-in-out rounded-lg">
                     <DeleteIcon variant="md" />
 
                     </div>

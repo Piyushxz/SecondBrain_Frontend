@@ -1,4 +1,3 @@
-import React from 'react';
 import { ShareIcon } from '../icons/ShareIcon';
 
 const featuresData = [
