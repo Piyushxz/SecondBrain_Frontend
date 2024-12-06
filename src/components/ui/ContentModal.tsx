@@ -73,6 +73,7 @@ export const ContentModal = () => {
           link,
           type: contentModalT,
           content,
+          tags:finalTags
         },
         {
           headers: {

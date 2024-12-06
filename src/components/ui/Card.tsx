@@ -27,7 +27,7 @@ export const Card = (props:cardProps) =>{
     const copyToClipboard = ()=>{
         navigator.clipboard.writeText(props.link)
 
-        showAlert("contentLinkCopied");
+        showAlert("contentLinkCopied",2000);
     }
     return(
         <>
@@ -72,7 +72,7 @@ export const Card = (props:cardProps) =>{
                     </div>
                     :
                     props.variant==="tweet"?
-                    <div className=" flex justify-center object-fit">
+                    <div className=" flex justify-center object-fit  justify-center">
 
                         <blockquote className="twitter-tweet ">
                         <a href={props.link.replace("x.com","twitter.com")}></a> 
