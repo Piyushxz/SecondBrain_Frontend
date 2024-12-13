@@ -39,7 +39,7 @@ function App() {
       <Routes>
         <Route path="/" element={<Home/>}/>
         <Route path="/dashboard" element={    
-      <div className="flex">
+      <div className="flex min-h-screen">
           <Sidebar size="lg"/>
           <MainContent/>
       </div>}/>
