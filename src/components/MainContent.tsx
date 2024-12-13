@@ -28,12 +28,12 @@ export const MainContent= ()=>{
             <div className=" flex flex-wrap md:flex-row flex-col">
                 {
                     
-                    contents.map(({_id,type,link,text,title,tags})=>
+                    contents.map(({_id,type,link,content,title,tags})=>
                         
                         <Card key={_id}
                         variant={type}
                          link={link} 
-                         text={text} 
+                         content={content} 
                          title={title}
                          openDeleteModal={()=>handleDeleteContent(_id)}
                             tags = {tags}

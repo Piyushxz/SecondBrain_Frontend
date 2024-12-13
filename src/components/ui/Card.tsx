@@ -10,7 +10,7 @@ interface cardProps  {
     variant :"link"|"tweet"|"youtube",
     title:string,
     link:string,
-    text:string,
+    content:string,
     tags:[],
     openDeleteModal:()=>void
 
@@ -58,7 +58,7 @@ export const Card = (props:cardProps) =>{
                 {
                     props.variant==="link"?
                     <div className="pl-4 pt-2">
-                        <span className="font-montserrat text-[#B7B7B7] font-sm">{props.text}</span>
+                        <span className="font-montserrat text-[#B7B7B7] font-sm">{props.content}</span>
 
                     </div>
                     :
