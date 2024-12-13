@@ -22,7 +22,7 @@ export const MainContent= ()=>{
     return(
         <>
         
-        <div className="w-full h-screen bg-background px-6 pt-8 ml-80">
+        <div className="w-full h-screen bg-background px-6 pt-8 md:ml-80">
             <Navbar/>
 
             <div className=" flex flex-wrap md:flex-row flex-col">

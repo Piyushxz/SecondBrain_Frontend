@@ -19,7 +19,7 @@ const sizeStyles = {
 export const Sidebar = (props:sidebarProps)=>{
     return(
         <>
-        <div className={`min-h-screen hidden md:block ${sizeStyles[props.size]} bg-[#1a2439] fixed `}>
+        <div className={`h-screen hidden md:block ${sizeStyles[props.size]} bg-[#1a2439] fixed `}>
             <div className="flex mt-4 p-2">
             <BrainIcon variant="lg"/>
             <div className="font-montserrat text-white font-black text-2xl pl-2">
