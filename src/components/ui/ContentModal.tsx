@@ -27,6 +27,7 @@ export const ContentModal = () => {
   const [tags, setTags] = useState("");
   const [content, setContent] = useState("");
   const [finalTags, setFinalTags] = useState<Tag[]>([]);
+  const [tagsList,setTagsList] = useState<String[]>([])
 
   const handleCloseModal = () => {
     setModal((val) => !val);
@@ -48,10 +49,12 @@ export const ContentModal = () => {
     setContent(e.target.value);
   };
 
+
   const handleAddTagFinalList = (e: React.MouseEvent<HTMLButtonElement>) => {
     e.preventDefault();
     if (isValidString(tags)) {
       setFinalTags((prev) => [...prev, { id: uuid(), tag: tags }]);
+      setTagsList((prev)=>[...prev,tags])
       setTags(""); 
     }
   };
@@ -66,22 +69,24 @@ export const ContentModal = () => {
     e.preventDefault();
 
     try {
-      const response = await axios.post(
-        "http://localhost:3003/api/v1/content",
-        {
-          title,
-          link,
+      console.log({title,link,contentModalT,content,tagsList})
+       const response = await axios.post(
+         "http://localhost:3003/api/v1/content",
+         {
+           title,
+           link,
           type: contentModalT,
+          
           content,
-          tags:finalTags
+          tags:tagsList
         },
-        {
+      {
           headers: {
             Authorization: localStorage.getItem("token"),
           },
-        }
-      );
-      console.log(response);
+         }
+       );
+       console.log(response);
       handleCloseModal();
       showAlert("contentAddSuccess");
     } catch (err) {
