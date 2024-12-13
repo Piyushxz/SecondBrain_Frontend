@@ -3,7 +3,7 @@ import { CloseIcon } from "../../icons/CloseIcon";
 interface tagProps {
   text: string;
   variant: "modal" | "card";
-  handleTagDelete: () => void; 
+  handleTagDelete?: () => void; 
 }
 
 export const Tags = (props: tagProps) => {

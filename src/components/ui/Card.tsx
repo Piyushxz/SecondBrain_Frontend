@@ -4,12 +4,14 @@ import { DocumentIcon } from "../../icons/DocumentIcon"
 import { ShareIcon } from "../../icons/ShareIcon"
 import { TwitterIcon } from "../../icons/TwitterIcon"
 import { YoutubeIcon } from "../../icons/YoutubeIcon"
+import { Tags } from "./Tags"
 
 interface cardProps  {
     variant :"link"|"tweet"|"youtube",
     title:string,
     link:string,
     text:string,
+    tags:[],
     openDeleteModal:()=>void
 
 }
@@ -84,8 +86,11 @@ export const Card = (props:cardProps) =>{
                 }
             </div>
             <div className="flex pl-4 pt-2 gap-2">
-                <p className="font-montserrat text-white bg-backgroundColor px-4 py-2 text-sm rounded-2xl ">#productivity</p>
-                <p className=" font-montserrat text-white bg-backgroundColor px-4 py-2 text-sm rounded-2xl">#idea</p>
+                {
+                    props.tags.map((tag,index)=>(
+                        <Tags key={index} text={tag} variant="card"/>
+                    ))
+                }
             </div>
         </div>
         </>
