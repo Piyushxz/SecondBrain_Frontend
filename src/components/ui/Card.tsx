@@ -12,6 +12,7 @@ interface cardProps  {
     link:string,
     content:string,
     tags:[],
+    createdAt:string,
     openDeleteModal:()=>void
 
 }
@@ -91,6 +92,9 @@ export const Card = (props:cardProps) =>{
                         <Tags key={index} text={tag} variant="card"/>
                     ))
                 }
+            </div>
+            <div className="pl-4 pt-1">
+                <h1 className="font-montserrat text-[#B7B7B7] font-sm text-sm">Created At {props.createdAt}</h1>
             </div>
         </div>
         </>

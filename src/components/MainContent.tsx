@@ -12,7 +12,7 @@ export const MainContent= ()=>{
     const setActiveId = useSetRecoilState(activeIdForDeletion)
 
     const contents = useContent();
-    console.log(contents)
+    console.log(contents[1])
 
     const handleDeleteContent = (id:string)=>{
         setDeleteModal(val =>!val)
@@ -28,7 +28,7 @@ export const MainContent= ()=>{
             <div className=" flex flex-wrap md:flex-row flex-col">
                 {
                     
-                    contents.map(({_id,type,link,content,title,tags})=>
+                    contents.map(({_id,type,link,content,title,tags,createdAt})=>
                         
                         <Card key={_id}
                         variant={type}
@@ -37,6 +37,7 @@ export const MainContent= ()=>{
                          title={title}
                          openDeleteModal={()=>handleDeleteContent(_id)}
                             tags = {tags}
+                        createdAt={createdAt}
                          
                          />
                     )
