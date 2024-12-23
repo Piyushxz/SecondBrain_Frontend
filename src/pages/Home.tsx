@@ -1,5 +1,6 @@
 import { useNavigate } from "react-router-dom";
 import Features from "../components/Features";
+import { Footer } from "../components/Footer";
 
 export const Home = () => {
     const navigate = useNavigate()
@@ -27,6 +28,10 @@ export const Home = () => {
 
         </div>
         <Features/>
+        <div className="mb-14">
+        <Footer/>
+
+        </div>
     </div>
     
     
