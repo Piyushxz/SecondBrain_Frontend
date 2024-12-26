@@ -37,3 +37,8 @@ export const activeIdForDeletion = atom({
     key:"activeIdForDeletion",
     default:""
 })
+
+export const showShareModal = atom({
+    key:"showShareModal",
+    default:false
+})

@@ -12,6 +12,7 @@ import { Login } from "./pages/Login"
 import PasswordAlertModal from "./components/PasswordAlert"
 import { DeleteContent } from "./components/DeleteContent"
 import { showDeleteModal } from "./atoms"
+import { ShareModal } from "./components/ShareModal"
 function App() {
 
 
@@ -35,11 +36,12 @@ function App() {
         <DeleteContent/> 
       }
       
+      <ShareModal/>
   
       <Routes>
         <Route path="/" element={<Home/>}/>
         <Route path="/dashboard" element={    
-      <div className="flex min-h-screen">
+      <div className="flex min-h-screen ">
           <Sidebar size="lg"/>
           <MainContent/>
       </div>}/>
