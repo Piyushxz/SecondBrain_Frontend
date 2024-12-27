@@ -4,7 +4,7 @@ import { Sidebar } from "./components/ui/Sidebar"
 import { MainContent } from "./components/MainContent"
 import { ContentModal } from "./components/ui/ContentModal"
 import { useRecoilValue } from "recoil"
-import {  modalType, toggleModal } from "./atoms"
+import {  modalType, showShareModal, toggleModal } from "./atoms"
 import { Routes } from "react-router-dom"
 import { Route } from "react-router-dom"
 import { Home } from "./pages/Home"
@@ -13,12 +13,14 @@ import PasswordAlertModal from "./components/PasswordAlert"
 import { DeleteContent } from "./components/DeleteContent"
 import { showDeleteModal } from "./atoms"
 import { ShareModal } from "./components/ShareModal"
+import { Share } from "./pages/Share"
 function App() {
 
 
   const isModalOpen = useRecoilValue(toggleModal)
   const deleteModalOpen = useRecoilValue(showDeleteModal)
   const alertType = useRecoilValue(modalType)
+  const shareModal = useRecoilValue(showShareModal)
   return (
     <>
     { 
@@ -35,8 +37,11 @@ function App() {
         deleteModalOpen &&
         <DeleteContent/> 
       }
-      
-      <ShareModal/>
+      {
+        shareModal &&
+        <ShareModal/>
+
+      }
   
       <Routes>
         <Route path="/" element={<Home/>}/>
@@ -47,6 +52,7 @@ function App() {
       </div>}/>
 
           <Route path="/signin" element={<Login/>}/>
+          <Route path="/share/:hash" element={<Share/>}/>
       </Routes>
     
       

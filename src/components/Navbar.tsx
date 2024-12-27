@@ -3,15 +3,19 @@ import { ShareIcon } from "../icons/ShareIcon"
 import { PlusIcon } from "../icons/PlusIcon"
 
 import { useSetRecoilState } from "recoil"
-import { toggleModal } from "../atoms"
+import { showShareModal, toggleModal } from "../atoms"
 import { MobileSidebar } from "./MobileSidebar"
 
 export const Navbar = () => {
     const setModal = useSetRecoilState(toggleModal)
+    const setShareModal = useSetRecoilState(showShareModal)
     const handleOpenModal = () => {
         setModal((val) => !val)
     }
 
+    const handleOpenShareModal = ()=>{
+        setShareModal((val) =>!val)
+    }
     return (
         <>
             <div className="grid-cols-10 flex justify-between items-center p-4 z-40">
@@ -30,7 +34,7 @@ export const Navbar = () => {
                         leftIcon={<ShareIcon variant="md" />}
                         variant="secondary"
                         size="lg"
-                        onClick={() => console.log("Hey")}
+                        onClick={handleOpenShareModal}
                         text="Share Brain"
                     />
                     <Button
@@ -48,7 +52,7 @@ export const Navbar = () => {
                     leftIcon={<ShareIcon variant="md" />}
                     variant="secondary"
                     size="lg"
-                    onClick={() => console.log("Hey")}
+                    onClick={handleOpenShareModal}
                     text="Share Brain"
                 />
                 <Button
