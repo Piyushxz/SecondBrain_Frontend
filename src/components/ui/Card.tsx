@@ -13,7 +13,8 @@ interface cardProps  {
     content:string,
     tags:[],
     createdAt:string,
-    openDeleteModal:()=>void
+    openDeleteModal?:()=>void,
+    shared?:boolean
 
 }
 
@@ -46,10 +47,17 @@ export const Card = (props:cardProps) =>{
                     <ShareIcon variant="md"/>
 
                     </div>
-                    <div onClick={props.openDeleteModal} className="hover:bg-secondaryColor p-1 transition ease-in-out rounded-lg">
-                    <DeleteIcon variant="md" />
+                    {
+                       !props.shared ? 
+                       <div onClick={props.openDeleteModal} className="hover:bg-secondaryColor p-1 transition ease-in-out rounded-lg">
+                       <DeleteIcon variant="md" />
+   
+                       </div>
+                       :
+                       null
 
-                    </div>
+                    }
+
                 </div>
 
             </div>
