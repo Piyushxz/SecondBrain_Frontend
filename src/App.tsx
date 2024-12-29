@@ -14,6 +14,8 @@ import { DeleteContent } from "./components/DeleteContent"
 import { showDeleteModal } from "./atoms"
 import { ShareModal } from "./components/ShareModal"
 import { Share } from "./pages/Share"
+import { Layout } from "./components/Layout"
+import { Main } from "./pages/User/Main"
 function App() {
 
 
@@ -45,12 +47,10 @@ function App() {
   
       <Routes>
         <Route path="/" element={<Home/>}/>
-        <Route path="/dashboard" element={    
-      <div className="flex min-h-screen ">
-          <Sidebar size="lg"/>
-          <MainContent/>
-      </div>}/>
 
+          <Route element={<Layout/>}>
+              <Route path="/dashboard/home" element={<Main/>}/>
+          </Route>
           <Route path="/signin" element={<Login/>}/>
           <Route path="/share/:hash" element={<Share/>}/>
       </Routes>
