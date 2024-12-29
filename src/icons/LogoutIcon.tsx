@@ -6,7 +6,7 @@ export const LogoutIcon = (props: IconProps) => {
     <>
       <svg
         xmlns="http://www.w3.org/2000/svg"
-        fill="none"
+        fill="#FFFFFF"
         viewBox="0 -960 960 960"
         strokeWidth="1.5"
         stroke="currentColor"

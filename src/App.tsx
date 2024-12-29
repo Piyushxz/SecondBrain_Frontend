@@ -49,7 +49,7 @@ function App() {
         <Route path="/" element={<Home/>}/>
 
           <Route element={<Layout/>}>
-              <Route path="/dashboard/home" element={<Main/>}/>
+              <Route path="/dashboard" element={<Main/>}/>
           </Route>
           <Route path="/signin" element={<Login/>}/>
           <Route path="/share/:hash" element={<Share/>}/>

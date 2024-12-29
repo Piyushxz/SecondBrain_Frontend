@@ -42,3 +42,8 @@ export const showShareModal = atom({
     key:"showShareModal",
     default:false
 })
+
+export const activeContentType = atom({
+    key:"activeContentType",
+    default:"home"
+})

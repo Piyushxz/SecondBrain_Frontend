@@ -1,6 +1,5 @@
 
 import { Card } from "./ui/Card"
-import { toggleModal } from "../atoms"
 import { useContent } from "../hooks/useContent"
 import { showDeleteModal } from "../atoms"
 import { Navbar } from "./Navbar"

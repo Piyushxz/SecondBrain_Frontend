@@ -41,7 +41,7 @@ const handleLoginClick = async () => {
 
             localStorage.setItem("token",token)
             
-            navigate("/dashboard")
+            navigate("/dashboard/")
         }
     } catch (err) {
         setIsLoading(false)
