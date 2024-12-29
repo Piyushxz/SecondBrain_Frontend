@@ -47,3 +47,8 @@ export const activeContentType = atom({
     key:"activeContentType",
     default:"home"
 })
+
+export const isLogoutModalOpen = atom({
+    key:"isLogoutModalOpen",
+    default:false
+})

@@ -20,7 +20,7 @@ export const Sidebar = (props:sidebarProps)=>{
             <div className="flex mt-4 p-2">
             <BrainIcon variant="lg"/>
             <div className="font-montserrat text-white font-black text-2xl pl-2">
-                Second Brain
+                xv Brainly
             </div>
         </div>
 
