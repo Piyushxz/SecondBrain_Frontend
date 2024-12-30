@@ -6,7 +6,7 @@ import { Navbar } from "./Navbar"
 import { useSetRecoilState } from "recoil"
 import { activeIdForDeletion } from "../atoms"
 
-import { useState } from "react"
+
 export const MainContent= ()=>{
 
     const setDeleteModal = useSetRecoilState(showDeleteModal)

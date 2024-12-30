@@ -1,8 +1,7 @@
 import { useState } from "react"
 import { Input } from "../components/ui/Input"
 import { Button } from "../components/ui/Button"
-import {  useSetRecoilState,  } from "recoil"
-import { modalType, showAlertModal } from "../atoms"
+
 import { useNavigate } from "react-router-dom"
 import axios from "axios"
 import { useAlert } from "../hooks/useAlert"
@@ -15,8 +14,6 @@ const [isLoading,setIsLoading] = useState(false)
 const [password,setPassword] = useState('')
 const navigate = useNavigate()
 
-const setShowAlert = useSetRecoilState(showAlertModal)
-const setModalType = useSetRecoilState(modalType)
 const handleLoginClick = async () => {
     try {
         setIsLoading(true)

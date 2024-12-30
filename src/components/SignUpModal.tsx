@@ -2,9 +2,7 @@ import { useState } from "react"
 import { Input } from "../components/ui/Input"
 import { Button } from "../components/ui/Button"
 import axios from "axios"
-import { showAlertModal } from "../atoms"
-import { useSetRecoilState } from "recoil"
-import { modalType } from "../atoms"
+
 import { useAlert } from "../hooks/useAlert"
 
 

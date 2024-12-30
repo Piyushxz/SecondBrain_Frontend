@@ -35,11 +35,12 @@ export const Home = () => {
                     <h1 className="font-montserrat font-extrabold text-xl text-white p-2 ">Chat with AI about your Links</h1>
                 </div>
             </div>
-            <div className=" md:col-span-7 col-span-12  ml-8 ">
-                <div className="md:w-[40vw]  h-48 rounded-lg border border-white border-opacity-40 flex justify-center "  >
-                <h1 className="font-montserrat font-extrabold text-5xl text-white p-2 "><div className="bg-gradient-to-r from-blue-200 via-blue-400 to-blue-600">Share all your stored links with anyone.</div></h1>
-
+            <div className=" md:col-span-7 col-span-12  ml-8  ">
+                <div className="md:w-[40vw]  h-48 rounded-lg border border-white border-opacity-40 flex  flex-col"  >
+                    <h1 className="font-montserrat font-extrabold text-5xl text-white p-2 "><div className="bg-gradient-to-r from-blue-200 via-blue-400 to-blue-600">Share all your stored links with anyone.</div></h1>
                 </div>
+                <div className="md:w-[40vw]  h-24 mt-8 rounded-lg border border-white border-opacity-40"></div>
+
             </div>
 
 

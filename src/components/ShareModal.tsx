@@ -4,7 +4,7 @@ import { showShareModal } from "../atoms"
 import { Button } from "./ui/Button"
 import { useState } from "react"
 import axios from "axios"
-import { useRef } from "react"
+
 import { CopyIcon } from "../icons/CopyIcon"
 import { useAlert } from "../hooks/useAlert"
 export const ShareModal = () =>{
