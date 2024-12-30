@@ -42,7 +42,7 @@ export const ShareModal = () =>{
 
     }
     const handleCopyLinkClick = () =>{
-        navigator.clipboard.writeText(`http://localhost:5173/share/${hash}`)
+        navigator.clipboard.writeText(`https://second-brain-frontend-64sr.vercel.app/share/${hash}`)
         showAlert("contentLinkCopied",2000)
     }
     return(
