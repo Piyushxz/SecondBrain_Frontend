@@ -20,7 +20,7 @@ const setModalType = useSetRecoilState(modalType)
 const handleLoginClick = async () => {
     try {
         setIsLoading(true)
-        const response = await axios.post("http://localhost:3003/api/v1/signin", {
+        const response = await axios.post("https://secondbrain-backend-9trd.onrender.com/api/v1/signin", {
             username,
             password
         });

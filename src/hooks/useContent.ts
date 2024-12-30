@@ -11,7 +11,7 @@ export const useContent = () => {
   async function getData() {
     try {
       const response = await axios.get(
-        `http://localhost:3003/api/v1/content/${activeType}`,
+        `https://secondbrain-backend-9trd.onrender.com/api/v1/content/${activeType}`,
         {
           headers: {
             Authorization: token,

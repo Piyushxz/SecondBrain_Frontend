@@ -17,7 +17,7 @@ export const DeleteContent = () =>{
         try{
             const response = await axios({
                 method: "delete",
-                url: "http://localhost:3003/api/v1/content",
+                url: "https://secondbrain-backend-9trd.onrender.com/api/v1/content",
                 data: { contentId: activeId }, 
                 headers: {
                   Authorization: localStorage.getItem("token") || "",

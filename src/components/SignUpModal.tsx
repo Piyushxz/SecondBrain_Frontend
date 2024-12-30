@@ -16,8 +16,6 @@ const [username , setUsername] = useState('')
 const [password,setPassword] = useState('')
 const [email,setIsEmail] = useState('')
 
-const setShowAlert = useSetRecoilState(showAlertModal)
-const setModalType = useSetRecoilState(modalType)
 
 
     const handleSignUpClick = async ()=>{
@@ -25,16 +23,13 @@ const setModalType = useSetRecoilState(modalType)
 
             setIsLoading(true)
             console.log(email,username,password)
-            const response = await axios.post("http://localhost:3003/api/v1/signup",{
+            const response = await axios.post("https://secondbrain-backend-9trd.onrender.com/api/v1/signup",{
                 email,
                 username,
                 password
             })
             if (response.status === 200) {
-                // setModalType("SignUpSuccess");
-                // setShowAlert(true);
-    
-                // setTimeout(() => setShowAlert(false), 5000);
+
 
                 setAlert("SignUpSuccess")
             }

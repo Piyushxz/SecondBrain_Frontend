@@ -71,7 +71,7 @@ export const ContentModal = () => {
     try {
       console.log({title,link,contentModalT,content,tagsList})
        const response = await axios.post(
-         "http://localhost:3003/api/v1/content",
+         "https://secondbrain-backend-9trd.onrender.com/api/v1/content",
          {
            title,
            link,
