@@ -84,7 +84,7 @@ const handleLoginClick = async () => {
                     variant="primary" size="wide" onClick={handleLoginClick}  text="Login"/>
                     <div className="pb-2">
                     <Button 
-                    variant="primary" size="wide" onClick={handleTestClick}  text="Set Text Credentials"/>
+                    variant="primary" size="wide" onClick={handleTestClick}  text="Set Test Credentials"/>
                     </div>
 
 
