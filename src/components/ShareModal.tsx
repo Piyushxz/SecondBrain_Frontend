@@ -73,7 +73,7 @@ export const ShareModal = () =>{
                                 className="w-[80vw] border border-white border-opacity-30 font-montserrat flex justify-center items-center overflow-hidden px-10 "
                                 title={`http://localhost:5173/share/${hash}`}
                                 >
-                                http://localhost:5173/share/{hash}
+                               https://second-brain-frontend-64sr.vercel.app/share/{hash}
                                 </div>
                         
                                 
