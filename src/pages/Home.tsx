@@ -28,6 +28,22 @@ export const Home = () => {
 
         </div>
         <Features/>
+        <div className="mt-10  grid grid-cols-12">
+            <div className="md:col-span-5 col-span-12  h-96 flex justify-end">
+                <div className="w-96 h-80 bg-backgroundColor rounded-lg border border-white border-opacity-40 flex justify-start flex-col">
+                    <h1 className="font-montserrat font-extrabold text-6xl text-white p-2 ">AI Assitant adding <span className="bg-transparent bg-gradient-to-r from-blue-200 via-blue-400 to-blue-600 text-transparent bg-clip-text">soon,</span></h1>
+                    <h1 className="font-montserrat font-extrabold text-xl text-white p-2 ">Chat with AI about your Links</h1>
+                </div>
+            </div>
+            <div className=" md:col-span-7 col-span-12  ml-8 ">
+                <div className="md:w-[40vw]  h-48 rounded-lg border border-white border-opacity-40 flex justify-center "  >
+                <h1 className="font-montserrat font-extrabold text-5xl text-white p-2 "><div className="bg-gradient-to-r from-blue-200 via-blue-400 to-blue-600">Share all your stored links with anyone.</div></h1>
+
+                </div>
+            </div>
+
+
+        </div>
         <div className="mb-14">
         <Footer/>
 
