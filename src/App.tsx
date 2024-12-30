@@ -1,7 +1,5 @@
 
 
-import { Sidebar } from "./components/ui/Sidebar"
-import { MainContent } from "./components/MainContent"
 import { ContentModal } from "./components/ui/ContentModal"
 import { useRecoilValue } from "recoil"
 import {  isLogoutModalOpen, modalType, showShareModal, toggleModal } from "./atoms"
