@@ -40,6 +40,8 @@ const handleLoginClick = async () => {
             
             navigate("/dashboard/")
         }
+
+
     } catch (err) {
         setIsLoading(false)
         console.error(err);
@@ -63,19 +65,29 @@ const handleLoginClick = async () => {
         } 
     }
 };
+        const handleTestClick = ()=>{
+            setUsername("testUser")
+            setPassword("123456")
+        }
 
     return(
         <>
-            <div className="w-96 h-96 bg-backgroundColor rounded-2xl border border-secondaryColor flex flex-col">
+            <div className="w-96  bg-backgroundColor rounded-2xl border border-secondaryColor flex flex-col">
                 <h1 className="font-montserrat font-black text-4xl text-white text-center p-4">vX Brainly</h1>
                 <div className="flex flex-col">
                     <Input label="Username" htmlFor="username" value={username} onChange={(e)=>{setUsername(e.target.value)}} />
                     <Input label="Password" htmlFor="password" value={password} type="password" onChange={(e)=>{setPassword(e.target.value)}} />
                     
                    
-                    <div className="mt-12 ml-4 mr-4">
+                    <div className="mt-12 ml-4 mr-4 flex flex-col gap-2">
                     <Button isLoading={isLoading} 
                     variant="primary" size="wide" onClick={handleLoginClick}  text="Login"/>
+                    <div className="pb-2">
+                    <Button 
+                    variant="primary" size="wide" onClick={handleTestClick}  text="Set Text Credentials"/>
+                    </div>
+
+
                     </div>
                 </div>
             </div>
