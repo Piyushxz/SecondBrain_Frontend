@@ -5,11 +5,13 @@ import { showDeleteModal } from "../atoms"
 import { Navbar } from "./Navbar"
 import { useSetRecoilState } from "recoil"
 import { activeIdForDeletion } from "../atoms"
+import CardSkeleton from "./CardSkeleton"
+import { useState } from "react"
 export const MainContent= ()=>{
 
     const setDeleteModal = useSetRecoilState(showDeleteModal)
     const setActiveId = useSetRecoilState(activeIdForDeletion)
-
+    const [loading,setLoading] = useState(false)
     const contents = useContent();
     console.log(contents[1])
 
@@ -41,6 +43,7 @@ export const MainContent= ()=>{
                          />
                     )
                 }
+                
             </div>
         </div>
         </>

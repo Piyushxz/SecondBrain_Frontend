@@ -33,7 +33,7 @@ export const MobileSidebar = () => {
           isSidebarOpen ? " translate-x-0" : " -translate-x-full"
         }`}
       >
-        <div className="flex justify-between pl-4 pr-4 mt-4 items-center">
+        <div className="flex justify-between pl-4 pr-4 mt-4 items-center cursor-pointer ">
           <div>
             <BrainIcon variant="lg" />
           </div>
@@ -49,7 +49,7 @@ export const MobileSidebar = () => {
           <ul>
             <li onClick={() => setContentType("home")}>
               <div
-                className={`flex pl-8 mb-6 hover:bg-primaryColor2 p-4 ${
+                className={`flex pl-8 mb-6 hover:bg-primaryColor2 p-4  cursor-pointer ${
                   contentType === "home" ? " bg-primaryColor2 " : " "
                 }`}
               >
@@ -61,7 +61,7 @@ export const MobileSidebar = () => {
             </li>
             <li onClick={() => setContentType("tweet")}>
               <div
-                className={`flex pl-8 mb-6 hover:bg-primaryColor2 p-4 ${
+                className={`flex pl-8 mb-6 hover:bg-primaryColor2 p-4 cursor-pointer ${
                   contentType === "tweet" ? " bg-primaryColor2 " : " "
                 }`}
               >
@@ -73,7 +73,7 @@ export const MobileSidebar = () => {
             </li>
             <li onClick={() => setContentType("youtube")}>
               <div
-                className={`flex pl-8 mb-6 hover:bg-primaryColor2 p-4 ${
+                className={`flex pl-8 mb-6 hover:bg-primaryColor2 p-4 cursor-pointer ${
                   contentType === "youtube" ? " bg-primaryColor2 " : " "
                 }`}
               >
@@ -85,18 +85,18 @@ export const MobileSidebar = () => {
             </li>
             <li onClick={() => setContentType("link")}>
               <div
-                className={`flex pl-8 mb-6 hover:bg-primaryColor2 p-4 ${
+                className={`flex pl-8 mb-6 hover:bg-primaryColor2 p-4  cursor-pointer ${
                   contentType === "link" ? " bg-primaryColor2 " : " "
                 }`}
               >
                 <LinkIcon variant="lg" />
-                <h1 className="pl-4 text-gray-300 text-lg font-montserrat font-xl">
+                <h1 className="pl-4 text-gray-300 text-lg font-montserrat font-xl ">
                   Links
                 </h1>
               </div>
             </li>
             <li onClick={()=>setIsLogoutModalOpen(true)}>
-              <div className="flex pl-6 hover:bg-primaryColor2 p-4">
+              <div className="flex pl-6 hover:bg-primaryColor2 p-4 cursor-pointer">
                 <LogoutIcon variant="lg" />
                 <h1 className="pl-4 text-gray-300 text-lg font-montserrat font-xl">
                   LogOut
