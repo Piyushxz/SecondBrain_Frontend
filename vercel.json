@@ -1,0 +1,9 @@
+{
+    "rewrites": [
+      {
+        "source": "/share/:hash",
+        "destination": "/index.html"
+      }
+    ]
+  }
+  
