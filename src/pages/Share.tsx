@@ -11,7 +11,7 @@ export const Share = ()=>{
         (async()=>{
 
             try{
-                const response = await axios.get(`http://localhost:3003/api/v1/brain/${hash}`)
+                const response = await axios.get(`https://secondbrain-backend-9trd.onrender.com/api/v1/brain/${hash}`)
 
 
                 console.log(response)
