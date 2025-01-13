@@ -1,6 +1,7 @@
 import { useNavigate } from "react-router-dom";
 import Features from "../components/Features";
 import { Footer } from "../components/Footer";
+import {motion} from "motion/react"
 
 export const Home = () => {
     const navigate = useNavigate()
@@ -11,18 +12,33 @@ export const Home = () => {
     return (
     <>
     <div className="h-screen bg-gradient-to-b from-backgroundColor via-secondaryColor to-primaryColor-2">
-        <div className="flex justify-center   px-4">
+      <div>
+        
+      </div>
+        <div className="flex justify-center   px-4 mt-24">
             <div className="mt-14 flex flex-col  justify-center items-center text-center">
-                <h1 className="text-6xl md:text-7xl font-montserrat font-black text-white">
-                    vX Brainly
-                </h1>
-                <h2 className="font-montserrat md:text-xl text-lg font-extrabold text-white mt-10 max-w-lg sm:max-w-lg text-center">
-                    "Never Lose a Link Again! Store, Manage, and Revisit Your Favorite Online Resources Effortlessly."
-                </h2>
-                <button onClick={handleButtonClick}
-                 className=" mt-4 px-4 py-2 text-2xl text-white rounded-full font-montserrat font-extrabold  bg-backgroundColor hover:bg-primaryColor2 ">
+                <motion.h1 initial={{opacity:0,y:30}}
+                animate={{opacity:1,y:0}}
+                transition={{duration:0.7,ease:"easeInOut"}}
+      
+                 style={{ fontFamily: 'Satoshi, sans-serif' }}
+                 className="text-6xl md:text-7xl  font-satoshi tracking-tighter  font-black text-white">
+                    xvBrainly
+                </motion.h1>
+                <motion.h2 initial={{opacity:0,y:30}}
+                animate={{opacity:1,y:0}}
+                transition={{delay:0.4,ease:"easeInOut"}}
+
+                 className="font-satoshi tracking-tighter md:text-2xl text-lg font-bold text-white mt-6 max-w-lg sm:max-w-lg text-center">
+                    Never Lose a Link Again! Store, Manage, and Revisit Your Favorite Online Resources Effortlessly.
+                </motion.h2>
+                <motion.button  initial={{opacity:0,y:30}}
+                animate={{opacity:1.2,y:0}}
+                transition={{delay:0.7,ease:"easeInOut",}}
+                onClick={handleButtonClick}
+                 className=" mt-4 px-8 py-3 text-white rounded-lg font-satoshi font-normal  bg-backgroundColor hover:bg-opacity-60 ">
                     Start Now
-                </button>
+                </motion.button>
             
             </div>
 

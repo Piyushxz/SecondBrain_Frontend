@@ -2,12 +2,13 @@
 export default {
   content: [
     "./index.html",
-    "./src/**/*.{js,ts,jsx,tsx}",
+    "./src/**/*.{html,js,ts,jsx,tsx}",
   ],
   theme: {
     extend: {
       fontFamily: {
         montserrat: ['Montserrat', 'sans-serif'],
+        satoshi: ["Satoshi", "sans-serif"], 
       },
       colors:{
         primaryColor:"#1a2439",
