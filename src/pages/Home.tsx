@@ -12,14 +12,20 @@ export const Home = () => {
     return (
     <>
     <div className="h-screen bg-gradient-to-b from-backgroundColor via-secondaryColor to-primaryColor-2">
-      <div>
-        
+      <div className="w-full flex justify-center border-b border-white border-opacity-20">
+          <motion.div initial={{opacity:0,y:-20}}
+                animate={{opacity:1,y:0}}
+                transition={{delay:0.2,ease:"easeInOut"}}
+      
+          className="w-[80vw] flex justify-between">
+              <h1  className="text-xl md:text-3xl  font-satoshi tracking-tighter  font-black text-white py-5">xVBrainly</h1>
+          </motion.div>
       </div>
         <div className="flex justify-center   px-4 mt-24">
             <div className="mt-14 flex flex-col  justify-center items-center text-center">
                 <motion.h1 initial={{opacity:0,y:30}}
                 animate={{opacity:1,y:0}}
-                transition={{duration:0.7,ease:"easeInOut"}}
+                transition={{delay:0.5,ease:"easeInOut"}}
       
                  style={{ fontFamily: 'Satoshi, sans-serif' }}
                  className="text-6xl md:text-7xl  font-satoshi tracking-tighter  font-black text-white">
@@ -27,16 +33,16 @@ export const Home = () => {
                 </motion.h1>
                 <motion.h2 initial={{opacity:0,y:30}}
                 animate={{opacity:1,y:0}}
-                transition={{delay:0.4,ease:"easeInOut"}}
+                transition={{delay:0.5,ease:"easeInOut"}}
 
                  className="font-satoshi tracking-tighter md:text-2xl text-lg font-bold text-white mt-6 max-w-lg sm:max-w-lg text-center">
                     Never Lose a Link Again! Store, Manage, and Revisit Your Favorite Online Resources Effortlessly.
                 </motion.h2>
                 <motion.button  initial={{opacity:0,y:30}}
                 animate={{opacity:1.2,y:0}}
-                transition={{delay:0.7,ease:"easeInOut",}}
+                transition={{delay:0.8,ease:"easeInOut",}}
                 onClick={handleButtonClick}
-                 className=" mt-4 px-8 py-3 text-white rounded-lg font-satoshi font-normal  bg-backgroundColor hover:bg-opacity-60 ">
+                 className=" mt-6 px-8 py-3 text-white rounded-lg font-satoshi font-normal  bg-backgroundColor hover:bg-opacity-60 ">
                     Start Now
                 </motion.button>
             
