@@ -52,7 +52,7 @@ export const ShareModal = () =>{
 
                 <div className="w-96 h-64 bg-backgroundColor rounded-lg  border border-white border-opacity-40">
                 <div className="flex justify-between p-2">
-                <h1 className="font-montserrat font-extrabold text-2xl text-white">Share Your Notes</h1>
+                <h1 className="font-satoshi tracking-tighter font-extrabold text-2xl text-white">Share Your Notes</h1>
                     <div className="hover:bg-primaryColor2 p-2 transition ease-in-out rounded-lg " onClick={()=>{setShareModal(val =>!val)
                         
                     }}>

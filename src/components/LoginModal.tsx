@@ -1,7 +1,7 @@
 import { useState } from "react"
 import { Input } from "../components/ui/Input"
 import { Button } from "../components/ui/Button"
-
+import {motion} from "motion/react"
 import { useNavigate } from "react-router-dom"
 import axios from "axios"
 import { useAlert } from "../hooks/useAlert"
@@ -72,8 +72,11 @@ const handleLoginClick = async () => {
 
     return(
         <>
-            <div className="w-96  bg-backgroundColor rounded-2xl border border-secondaryColor flex flex-col">
-                <h1 className="font-montserrat font-black text-4xl text-white text-center p-4">vX Brainly</h1>
+            <motion.div initial={{opacity:0,y:-20}}
+            animate={{opacity:1,y:0}}
+            transition={{delay:0.2,ease:"easeInOut"}}
+             className="w-96  bg-backgroundColor rounded-2xl border border-secondaryColor flex flex-col">
+                <h1 className="font-satoshi tracking-tighter font-black text-4xl text-white text-center p-4">vX Brainly</h1>
                 <div className="flex flex-col">
                     <Input label="Username" htmlFor="username" value={username} onChange={(e)=>{setUsername(e.target.value)}} />
                     <Input label="Password" htmlFor="password" value={password} type="password" onChange={(e)=>{setPassword(e.target.value)}} />
@@ -91,7 +94,7 @@ const handleLoginClick = async () => {
 
                     </div>
                 </div>
-            </div>
+            </motion.div>
             <></>
         </>
     )

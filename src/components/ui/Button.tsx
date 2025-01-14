@@ -24,7 +24,7 @@ const sizeStyles = {
     "sm":" py-1 px-2 text-sm rounded-lg",
     "md":" py-2 px-4 text-base rounded-lg",
     "lg":" py-2 px-4 text-base rounded-lg",
-    "wide":"w-full  font-semibold px-8 rounded-lg pt-4 pb-4 text-center"
+    "wide":"w-full font-satoshi tracking-tighter font-semibold px-8 rounded-lg pt-4 pb-4 text-center"
 }
 
 const defaultStyles = {

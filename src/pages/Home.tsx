@@ -12,15 +12,16 @@ export const Home = () => {
     return (
     <>
     <div className="h-screen bg-gradient-to-b from-backgroundColor via-secondaryColor to-primaryColor-2">
-      <div className="w-full flex justify-center border-b border-white border-opacity-20">
-          <motion.div initial={{opacity:0,y:-20}}
+      <motion.div initial={{opacity:0,y:-20}}
                 animate={{opacity:1,y:0}}
                 transition={{delay:0.2,ease:"easeInOut"}}
       
+      className="w-full flex justify-center border-b border-white border-opacity-20">
+          <div 
           className="w-[80vw] flex justify-between">
               <h1  className="text-xl md:text-3xl  font-satoshi tracking-tighter  font-black text-white py-5">xVBrainly</h1>
-          </motion.div>
-      </div>
+          </div>
+      </motion.div>
         <div className="flex justify-center   px-4 mt-24">
             <div className="mt-14 flex flex-col  justify-center items-center text-center">
                 <motion.h1 initial={{opacity:0,y:30}}
@@ -54,13 +55,13 @@ export const Home = () => {
   {/* Left Section */}
   <div className="md:col-span-5 col-span-12 h-auto flex justify-center md:justify-end">
     <div className="w-full md:w-96 h-auto md:h-80 bg-backgroundColor rounded-lg border border-white border-opacity-40 flex flex-col p-4">
-      <h1 className="font-montserrat font-extrabold text-4xl md:text-6xl text-white mb-2">
+      <h1 className="font-satoshi tracking-tighter font-extrabold text-4xl md:text-6xl text-white mb-2">
         AI Assistant adding{" "}
         <span className="bg-gradient-to-r from-blue-200 via-blue-400 to-blue-600 text-transparent bg-clip-text">
           soon,
         </span>
       </h1>
-      <h2 className="font-montserrat font-extrabold text-base md:text-xl text-white">
+      <h2 className="font-satoshi tracking-tighter font-extrabold text-base md:text-xl text-white">
         Chat with AI about your Links
       </h2>
     </div>
@@ -70,8 +71,8 @@ export const Home = () => {
         <div className="md:col-span-7 col-span-12 space-y-4 mb-10">
             
             <div className="w-full md:w-[40vw] h-auto md:h-48 rounded-lg border border-white border-opacity-40 flex flex-col p-4">
-            <h1 className="font-montserrat font-extrabold text-3xl md:text-5xl text-white">
-                <div className="bg-gradient-to-r from-blue-200 via-blue-400 to-blue-600">
+            <h1 className="font-satoshi tracking-tighter font-extrabold text-3xl md:text-5xl text-white">
+                <div className="">
                 Share all your stored links with anyone.
                 </div>
             </h1>

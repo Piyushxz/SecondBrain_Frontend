@@ -39,7 +39,7 @@ export const Card = (props:cardProps) =>{
             <div className="flex  justify-between p-4 items-center">
                 <div className="flex gap-2 items-center">
                     {iconStyles[props.variant]}
-                    <h1 className="font-montserrat font-black text-white text-lg pl-2">{props.title}</h1>
+                    <h1 className="font-satoshi tracking-tighter font-black text-white text-lg pl-2">{props.title}</h1>
                 </div>
                 <div className="flex gap-2">
                     <div onClick={copyToClipboard}

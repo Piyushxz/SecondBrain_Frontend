@@ -2,7 +2,7 @@ import { useState } from "react"
 import { Input } from "../components/ui/Input"
 import { Button } from "../components/ui/Button"
 import axios from "axios"
-
+import {motion} from "motion/react"
 import { useAlert } from "../hooks/useAlert"
 
 
@@ -71,8 +71,11 @@ const [email,setIsEmail] = useState('')
     return(
         <>
          
-            <div className="w-96 h-[480px] bg-backgroundColor rounded-2xl border border-secondaryColor flex flex-col">
-                <h1 className="font-montserrat font-black text-4xl text-white text-center p-4">vX Brainly</h1>
+            <motion.div initial={{opacity:0,y:-20}}
+            animate={{opacity:1,y:0}}
+            transition={{delay:0.2,ease:"easeInOut"}}
+            className="w-96 h-[480px] bg-backgroundColor rounded-2xl border border-secondaryColor flex flex-col">
+                <h1 className="font-satoshi tracking-tighter font-black text-4xl text-white text-center p-4">vX Brainly</h1>
                 <div className="flex flex-col">
                     <Input label="Email" htmlFor="email" value={email} onChange={(e)=>{setIsEmail(e.target.value)}} />
                     <Input label="Username" htmlFor="username" value={username} onChange={(e)=>{setUsername(e.target.value)}} />
@@ -85,7 +88,7 @@ const [email,setIsEmail] = useState('')
                      variant="primary" size="wide" onClick={handleSignUpClick}  text="Sign Up"/>
                     </div>
                 </div>
-            </div>
+            </motion.div>
         </>
     )
 }

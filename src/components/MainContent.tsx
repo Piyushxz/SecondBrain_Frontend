@@ -12,7 +12,6 @@ export const MainContent= ()=>{
     const setDeleteModal = useSetRecoilState(showDeleteModal)
     const setActiveId = useSetRecoilState(activeIdForDeletion)
     const contents = useContent();
-    console.log(contents[1])
 
     const handleDeleteContent = (id:string)=>{
         setDeleteModal(val =>!val)
