@@ -19,7 +19,7 @@ export const Home = () => {
       className="w-full flex justify-center border-b border-white border-opacity-20">
           <div 
           className="w-[80vw] flex justify-between">
-              <h1  className="text-xl md:text-3xl  font-satoshi tracking-tighter  font-black text-white py-5">xVBrainly</h1>
+              <h1  className="text-xl md:text-3xl  font-satoshi tracking-tighter  font-black text-white py-5">xV</h1>
           </div>
       </motion.div>
         <div className="flex justify-center   px-4 mt-24">
@@ -43,7 +43,7 @@ export const Home = () => {
                 animate={{opacity:1.2,y:0}}
                 transition={{delay:0.8,ease:"easeInOut",}}
                 onClick={handleButtonClick}
-                 className=" mt-6 px-8 py-3 text-white rounded-lg font-satoshi font-normal  bg-backgroundColor hover:bg-opacity-60 ">
+                 className=" mt-6 px-8 py-3 text-white rounded-lg font-satoshi font-medium  bg-backgroundColor hover:bg-opacity-60 ">
                     Start Now
                 </motion.button>
             
@@ -52,7 +52,6 @@ export const Home = () => {
         </div>
         <Features/>
         <div className="mt-10 grid grid-cols-12 gap-4">
-  {/* Left Section */}
   <div className="md:col-span-5 col-span-12 h-auto flex justify-center md:justify-end">
     <div className="w-full md:w-96 h-auto md:h-80 bg-backgroundColor rounded-lg border border-white border-opacity-40 flex flex-col p-4">
       <h1 className="font-satoshi tracking-tighter font-extrabold text-4xl md:text-6xl text-white mb-2">

@@ -20,7 +20,6 @@ const [email,setIsEmail] = useState('')
         try{
 
             setIsLoading(true)
-            console.log(email,username,password)
             const response = await axios.post("https://secondbrain-backend-9trd.onrender.com/api/v1/signup",{
                 email,
                 username,

@@ -25,7 +25,6 @@ const handleLoginClick = async () => {
         setUsername("")
         setPassword("")
 
-        console.log(response.status);
 
         if (response.status === 200) {
             // setModalType("LoginSuccess");
