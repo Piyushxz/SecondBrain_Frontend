@@ -1,8 +1,7 @@
 import { SearchIcon } from "../icons/SearchIcon"
 export const AISearch =()=>{
     return(
-        <div className="flex justify-center mt-4">
-                    <div className="w-[70vw] h-40 rounded-2xl border-2 border-gray-500 border-opacity-50 flex flex-col p-4">
+            <div className=" w-[80vw] md:w-[70vw] h-40 rounded-2xl border-2 border-gray-500 border-opacity-50 flex flex-col p-4">
             <textarea
             className="bg-transparent text-white w-full p-2 resize-none flex-grow outline-none 
                     text-gray-900 dark:text-gray-100 
@@ -20,7 +19,6 @@ export const AISearch =()=>{
                 </div>
             </div>
 
-    </div>
 
     )
 }
