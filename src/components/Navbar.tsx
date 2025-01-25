@@ -26,7 +26,7 @@ export const Navbar = () => {
 
               
                 <div className="col-span-3 md:col-span-5">
-                    <h1 className="font-satoshi tracking-tighter font-extrabold text-4xl text-white">Your Notes</h1>
+                    <h1 className="font-satoshi tracking-tighter font-extrabold text-4xl text-white">Welcome back , testUser!</h1>
                 </div>
 
                 <div className="hidden md:flex col-span-10 md:col-span-5 gap-4 justify-end">

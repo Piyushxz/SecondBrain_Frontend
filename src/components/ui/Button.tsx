@@ -28,7 +28,7 @@ const sizeStyles = {
 }
 
 const defaultStyles = {
-    "default":"font-montserrat font-normal  transition-all duration-300 "
+    "default":"font-satoshi font-normal  transition-all duration-300 "
 }
 
 

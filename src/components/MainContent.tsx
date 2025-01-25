@@ -5,6 +5,7 @@ import { showDeleteModal } from "../atoms"
 import { Navbar } from "./Navbar"
 import { useSetRecoilState } from "recoil"
 import { activeIdForDeletion } from "../atoms"
+import { AISearch } from "./AISearch"
 
 
 export const MainContent= ()=>{
@@ -24,7 +25,14 @@ export const MainContent= ()=>{
         <div className="w-full h-screen bg-background px-6 pt-8 md:ml-80 ">
             <Navbar/>
 
-            <div className=" flex flex-wrap md:flex-row flex-col">
+            <AISearch/>
+
+                <div className="flex flex-col ">
+                    <div className="p-4">
+                        <h1 className="font-satoshi tracking-tighter font-extrabold text-4xl text-white">Your Brain,</h1>
+                    </div>
+
+                <div className=" flex flex-wrap md:flex-row flex-col ">
                 {
                     
                     contents.map(({_id,type,link,content,title,tags,createdAt})=>
@@ -43,6 +51,8 @@ export const MainContent= ()=>{
                 }
                 
             </div>
+                </div>
+
         </div>
         </>
     )
