@@ -16,6 +16,7 @@ export const SearchResult = ()=>{
                 <p className="">{response?.data.answer}</p>
             </div>
         </div>
+
         <SearchResultCard variant={response?.data.sources[0].type} title={response?.data.sources[0].content}/>
     </div>
     )

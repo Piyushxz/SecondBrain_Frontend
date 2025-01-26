@@ -20,13 +20,14 @@ export const Navbar = () => {
         <>
             <div className="grid-cols-10 flex justify-between items-center p-4 z-40">
                
-                <div className="md:hidden block">
-                    <MobileSidebar />
-                </div>
+
 
               
                 <div className="col-span-3 md:col-span-5">
-                    <h1 className="font-satoshi tracking-tighter font-extrabold text-4xl text-white">Welcome back , testUser!</h1>
+                    <h1 className="font-satoshi tracking-tighter font-extrabold md:text-4xl text-3xl text-white">Welcome back , testUser!</h1>
+                </div>
+                <div className="md:hidden block">
+                    <MobileSidebar />
                 </div>
 
                 <div className="hidden md:flex col-span-10 md:col-span-5 gap-4 justify-end">
