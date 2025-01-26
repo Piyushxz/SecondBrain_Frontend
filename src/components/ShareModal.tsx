@@ -6,10 +6,9 @@ import { useState } from "react"
 import axios from "axios"
 
 import { CopyIcon } from "../icons/CopyIcon"
-import { useAlert } from "../hooks/useAlert"
+import { toast } from "sonner"
 export const ShareModal = () =>{
 
-    const showAlert = useAlert()
     const setShareModal = useSetRecoilState(showShareModal)
     const [isLoading,setIsLoading] = useState(false)
     const [hash,setHash] = useState("")
@@ -43,7 +42,7 @@ export const ShareModal = () =>{
     }
     const handleCopyLinkClick = () =>{
         navigator.clipboard.writeText(`https://second-brain-frontend-64sr.vercel.app/share/${hash}`)
-        showAlert("contentLinkCopied",2000)
+        toast.info("Link copied to clipboard!")
     }
     return(
         <>  

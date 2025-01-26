@@ -1,4 +1,4 @@
-import { useAlert } from "../../hooks/useAlert"
+import { toast } from "sonner"
 import { DeleteIcon } from "../../icons/DeleteIcon"
 import { DocumentIcon } from "../../icons/DocumentIcon"
 import { ShareIcon } from "../../icons/ShareIcon"
@@ -27,11 +27,12 @@ const iconStyles={
 
 export const Card = (props:cardProps) =>{
 
-    const showAlert = useAlert()
     const copyToClipboard = ()=>{
         navigator.clipboard.writeText(props.link)
 
-        showAlert("contentLinkCopied",2000);
+        // showAlert("contentLinkCopied",2000);
+
+        toast.success("Link Copied to clipboard")
     }
     return(
         <>

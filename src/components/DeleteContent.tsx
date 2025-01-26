@@ -5,34 +5,37 @@ import { InfoIcon } from "../icons/InfoIcon"
 import { activeIdForDeletion } from "../atoms"
 import { Button } from "./ui/Button"
 import axios from "axios"
-import { useAlert } from "../hooks/useAlert"
+import { toast } from "sonner"
 
 export const DeleteContent = () =>{
     const activeId= useRecoilState(activeIdForDeletion)
     const setDeleteModal = useSetRecoilState(showDeleteModal)
 
 
-    const setAlert = useAlert()
-    const handleDeleteContent = async ()=>{
-        try{
-            const response = await axios({
-                method: "delete",
-                url: "https://secondbrain-backend-9trd.onrender.com/api/v1/content",
-                data: { contentId: activeId }, 
-                headers: {
-                  Authorization: localStorage.getItem("token") || "",
-                },
-            })
-
-            console.log(response)
-            setDeleteModal(val =>!val)
-            setAlert("contentDeleteSuccess")
-        }catch(err){
-            console.log(err)
-            setAlert("contentDeleteFail")
-
+    const handleDeleteContent = async () => {
+        try {
+          const response = await toast.promise(
+            axios({
+              method: "delete",
+              url: "https://secondbrain-backend-9trd.onrender.com/api/v1/content",
+              data: { contentId: activeId },
+              headers: {
+                Authorization: localStorage.getItem("token") || "",
+              },
+            }),
+            {
+              loading: "Deleting Content...",
+              success: () => "Content Deleted Successfully!",
+              error: "Could not delete content",
+            }
+          );
+      
+          console.log(response);
+          setDeleteModal((val) => !val);
+        } catch (err) {
+          console.error("Error deleting content:", err);
         }
-    }
+      };
     return(
         <>
 

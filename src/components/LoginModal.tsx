@@ -4,11 +4,10 @@ import { Button } from "../components/ui/Button"
 import {motion} from "motion/react"
 import { useNavigate } from "react-router-dom"
 import axios from "axios"
-import { useAlert } from "../hooks/useAlert"
+import { toast } from "sonner"
 
 
 export const LoginModal = ()=>{
-const setAlert = useAlert()
 const [username , setUsername] = useState('')
 const [isLoading,setIsLoading] = useState(false)
 const [password,setPassword] = useState('')
@@ -27,11 +26,11 @@ const handleLoginClick = async () => {
 
 
         if (response.status === 200) {
-            // setModalType("LoginSuccess");
-            // setShowAlert(true);
 
-            // setTimeout(() => setShowAlert(false), 5000);
-            setAlert("LoginSuccess")
+            // setAlert("LoginSuccess")
+
+            toast.success("Login successful! Redirecting...")
+
 
             const token = response.data.token;
 
@@ -54,10 +53,11 @@ const handleLoginClick = async () => {
             if (status === 403) {
 
 
-                setAlert("LoginFail");
+                // setAlert("LoginFail");
+                toast.error("Invalid Credentials")
             } else if (status === 401) {
 
-                setAlert("LoginFail");
+                toast.error("Could not login")
 
             }
  

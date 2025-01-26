@@ -3,12 +3,11 @@ import { Input } from "../components/ui/Input"
 import { Button } from "../components/ui/Button"
 import axios from "axios"
 import {motion} from "motion/react"
-import { useAlert } from "../hooks/useAlert"
+import { toast } from "sonner"
 
 
 export const SignUpModal = ()=>{
 
-const setAlert = useAlert()
 const [isLoading,setIsLoading] = useState(false)
 const [username , setUsername] = useState('')
 const [password,setPassword] = useState('')
@@ -28,7 +27,8 @@ const [email,setIsEmail] = useState('')
             if (response.status === 200) {
 
 
-                setAlert("SignUpSuccess")
+                // setAlert("SignUpSuccess")
+                toast.success("Signed Up Succesfully")
             }
             setIsLoading(false)
 
@@ -54,13 +54,17 @@ const [email,setIsEmail] = useState('')
                 // setShowAlert(true);
 
                 // setTimeout(() => setShowAlert(false), 5000);
-                setAlert("invalidPassword")
+                // setAlert("invalidPassword")
+                toast.error('Invalid Format')
+
             } else if (status === 409) {
                 // setModalType("SignUpFail");
                 // setShowAlert(true);
 
                 // setTimeout(() => setShowAlert(false), 5000);
-                setAlert("SignUpFail")
+                // setAlert("SignUpFail")
+                toast.error('Could not sign up')
+
             }
         } 
         }

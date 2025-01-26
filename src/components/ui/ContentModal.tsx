@@ -10,6 +10,7 @@ import axios from "axios";
 import { useAlert } from "../../hooks/useAlert";
 import { isValidString } from "../../utils";
 import { Tags } from "./Tags";
+import { toast } from "sonner";
 
 type Tag = {
   id: string;
@@ -88,10 +89,10 @@ export const ContentModal = () => {
        );
        console.log(response);
       handleCloseModal();
-      showAlert("contentAddSuccess");
+      toast.success(`${title} added to your brain!`)
     } catch (err) {
+      toast.error('Could not add content')
       console.error(err);
-      showAlert("contentAddFail");
     }
   };
 
