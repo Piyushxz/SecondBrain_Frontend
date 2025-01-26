@@ -7,7 +7,6 @@ import { Button } from "./Button";
 import { useState } from "react";
 import { Options } from "./Options";
 import axios from "axios";
-import { useAlert } from "../../hooks/useAlert";
 import { isValidString } from "../../utils";
 import { Tags } from "./Tags";
 import { toast } from "sonner";
@@ -18,7 +17,6 @@ type Tag = {
 };
 
 export const ContentModal = () => {
-  const showAlert = useAlert();
   const isModalOpen = useRecoilValue(toggleModal);
   const setModal = useSetRecoilState(toggleModal);
   const contentModalT = useRecoilValue(contentModalType);
