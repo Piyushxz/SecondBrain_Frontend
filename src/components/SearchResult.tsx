@@ -1,6 +1,5 @@
 import { useRecoilValue } from "recoil"
 import { queryResponse } from "../atoms"
-import { useState } from "react"
 export const SearchResult = ()=>{
 
     const response = useRecoilValue(queryResponse)
