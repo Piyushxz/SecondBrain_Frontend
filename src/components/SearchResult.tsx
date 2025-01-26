@@ -4,7 +4,6 @@ export const SearchResult = ()=>{
 
     const response = useRecoilValue(queryResponse)
 
-    //@ts-ignore
     console.log(response?.data.answer)
 
     return(
