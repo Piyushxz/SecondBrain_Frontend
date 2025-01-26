@@ -1,16 +1,20 @@
 
 import { Card } from "./ui/Card"
 import { useContent } from "../hooks/useContent"
-import { showDeleteModal } from "../atoms"
+import { queryLoading, queryResponse, showDeleteModal } from "../atoms"
 import { Navbar } from "./Navbar"
-import { useSetRecoilState } from "recoil"
+import {  useRecoilValue, useSetRecoilState } from "recoil"
 import { activeIdForDeletion } from "../atoms"
 import { AISearch } from "./AISearch"
 import { SearchResultSkeleton } from "./SearchResultSkeleton"
+import { SearchResult } from "./SearchResult"
 
 
 export const MainContent= ()=>{
 
+    const isLoading = useRecoilValue(queryLoading)
+    const response = useRecoilValue(queryResponse)
+    console.log(isLoading)
     const setDeleteModal = useSetRecoilState(showDeleteModal)
     const setActiveId = useSetRecoilState(activeIdForDeletion)
     const contents = useContent();
@@ -28,7 +32,16 @@ export const MainContent= ()=>{
 
             <div className="flex flex-col  justify-center items-center mt-4">
             <AISearch/>
-            <SearchResultSkeleton/>
+            {
+            isLoading ? (
+                <SearchResultSkeleton />
+            ) : response ? (
+                <SearchResult />
+            ) : (
+                <div className="w-[70vw] h-48"></div>
+            )
+}
+          
             </div>
             
 

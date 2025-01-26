@@ -1,5 +1,15 @@
+import { AxiosResponse } from "axios";
 import { atom } from "recoil";
 
+export const queryResponse = atom<AxiosResponse | null>({
+    key: "queryResponse", 
+    default: null,        
+  });
+
+export const queryLoading = atom({
+    key:"queryLoading",
+    default:false
+})
 
 export const toggleModal = atom({
     key:"toggleModal",
