@@ -19,7 +19,7 @@ export const AISearch =()=>{
 
         try{
             setQueryLoading(true)
-            const response = await axios.post('http://localhost:3003/api/v1/search',{
+            const response = await axios.post('https://secondbrain-backend-9trd.onrender.com/api/v1/search',{
                 query:inputRef.current?.value},
                 {
                     headers:{
