@@ -21,6 +21,11 @@ export const showSidebar = atom({
     default:false
 })
 
+export const activeUsername = atom({
+    key:"activeUsername",
+    default:null
+})
+
 
 export const showAlertModal = atom({
     key:"showAlertModal",
@@ -37,6 +42,7 @@ export const contentModalType = atom({
     key:"contentModalType",
     default:"tweet"
 })
+
 
 export const showDeleteModal = atom({
     key:"showDeleteModal",

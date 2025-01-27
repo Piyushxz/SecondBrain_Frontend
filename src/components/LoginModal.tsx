@@ -5,6 +5,8 @@ import {motion} from "motion/react"
 import { useNavigate } from "react-router-dom"
 import axios from "axios"
 import { toast } from "sonner"
+import { useSetRecoilState } from "recoil"
+import { activeUsername } from "../atoms"
 
 
 export const LoginModal = ()=>{
@@ -12,7 +14,7 @@ const [username , setUsername] = useState('')
 const [isLoading,setIsLoading] = useState(false)
 const [password,setPassword] = useState('')
 const navigate = useNavigate()
-
+const setActiveUser = useSetRecoilState(activeUsername)
 const handleLoginClick = async () => {
     try {
         setIsLoading(true)
@@ -33,6 +35,7 @@ const handleLoginClick = async () => {
 
 
             const token = response.data.token;
+            setActiveUser(response.data.username)
 
             localStorage.setItem("token",token)
             
