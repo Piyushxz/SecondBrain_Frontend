@@ -5,8 +5,6 @@ export const SearchResult = ()=>{
 
     const response = useRecoilValue(queryResponse)
 
-    console.log(response?.data.answer)
-    console.log(response?.data.sources[0])
 
     return(
         <div className="grid grid-cols-12 md:w-[70vw] w-[80vw] mt-4 gap-4">

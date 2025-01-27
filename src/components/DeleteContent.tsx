@@ -1,5 +1,5 @@
 import { CloseIcon } from "../icons/CloseIcon"
-import { useRecoilState, useSetRecoilState } from "recoil"
+import {  useRecoilValue, useSetRecoilState } from "recoil"
 import { showDeleteModal } from "../atoms"
 import { InfoIcon } from "../icons/InfoIcon"
 import { activeIdForDeletion } from "../atoms"
@@ -8,34 +8,34 @@ import axios from "axios"
 import { toast } from "sonner"
 
 export const DeleteContent = () =>{
-    const activeId= useRecoilState(activeIdForDeletion)
+    const activeId= useRecoilValue(activeIdForDeletion)
     const setDeleteModal = useSetRecoilState(showDeleteModal)
+    console.log("type", typeof activeId)
 
 
     const handleDeleteContent = async () => {
-        try {
-          const response = await toast.promise(
-            axios({
-              method: "delete",
-              url: "https://secondbrain-backend-9trd.onrender.com/api/v1/content",
-              data: { contentId: activeId },
-              headers: {
-                Authorization: localStorage.getItem("token") || "",
-              },
-            }),
-            {
-              loading: "Deleting Content...",
-              success: () => "Content Deleted Successfully!",
-              error: "Could not delete content",
-            }
-          );
-      
-          console.log(response);
-          setDeleteModal((val) => !val);
-        } catch (err) {
-          console.error("Error deleting content:", err);
-        }
-      };
+      try {
+        const response = await toast.promise(
+          axios.delete("https://secondbrain-backend-9trd.onrender.com/api/v1/content", {
+            data: { contentId: activeId }, 
+            headers: {
+              Authorization: localStorage.getItem("token") || "",
+            },
+          }),
+          {
+            loading: "Deleting Content...",
+            success: () => "Content Deleted Successfully!",
+            error: "Could not delete content",
+          }
+        );
+    
+        console.log(response);
+        setDeleteModal((val) => !val);
+      } catch (err) {
+        console.error("Error deleting content:", err);
+      }
+    };
+    
     return(
         <>
 
