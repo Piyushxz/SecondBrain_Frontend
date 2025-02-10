@@ -51,8 +51,8 @@ const Features = () => {
             >
               <div className="group relative">
                 <span className="inline-block mb-6 mx-auto w-16 h-16">{feature.icon}</span>
-                <h4 className="font-semibold text-xl mb-4">{feature.title}</h4>
-                <p className="text-gray-400">{feature.description}</p>
+                <h4 className="font-semibold font-satoshi tracking-tighter text-xl mb-4">{feature.title}</h4>
+                <p className="font-satoshi tracking-tighter text-gray-400">{feature.description}</p>
               </div>
             </div>
           ))}
