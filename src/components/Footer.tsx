@@ -7,7 +7,7 @@ export const Footer = () => {
             
             <div className="flex flex-col items-center lg:items-start">
               <div className="h-48 w-48 flex justify-center items-center">
-                <h1 className="font-montserrat text-4xl font-black text-white">xv Brainly</h1>
+                <h1 className="font-satoshi tracking-tighter text-4xl font-black text-white">xv Brainly</h1>
               </div>
             </div>
   
@@ -119,7 +119,7 @@ export const Footer = () => {
   
         
         <div className="flex justify-center items-center py-4 bg-backgroundColor">
-          <h1 className="text-lg font-montserrat font-black text-white">
+          <h1 className="text-lg font-satoshi tracking-tighter font-black text-white">
             Made with <span className="text-red-500">&#x1F9E1;</span> by Piyush
           </h1>
         </div>

@@ -8,6 +8,9 @@ import { StarsBackground } from "../components/ui/stars-component";
 import { BrainIcon } from "../icons/BrainIcon";
 import SpotlightCard from "../components/SpotlightCard/SpotlightCard";
 import LiquidChrome from "../Backgrounds/LiquidChrome/LiquidChrome";
+import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from "../components/ui/Accordian";
+
+
 export const Home = () => {
     const navigate = useNavigate()
 
@@ -30,7 +33,8 @@ export const Home = () => {
           <div 
           className="w-[80vw] flex justify-between items-center">
               <h1  className="text-xl md:text-3xl  font-satoshi tracking-tighter  font-black text-white py-5">xv</h1>
-              <button className="transition-all duration-300 hover:opacity-70 bg-transparent font-satoshi tracking-tighter text-white font-normal text-xs px-5 py-2 lg:text-sm  border rounded-lg border-gray-600/50">Login</button>
+              <button onClick={handleButtonClick}
+              className="transition-all duration-300 hover:opacity-70 bg-transparent font-satoshi tracking-tighter text-white font-normal text-xs px-5 py-2 lg:text-sm  border rounded-lg border-gray-600/50">Login</button>
           </div>
       </motion.div>
         <div className="flex justify-center   px-4 mt-24">
@@ -66,7 +70,7 @@ export const Home = () => {
   <div className="w-[70vw] grid grid-cols-12 relative ">
     
     <div className="absolute inset-0 -z-10 opacity-40">
-    <div className="w-full h-full relative opacity-50">
+    <div className="w-full h-full relative opacity-70">
   <LiquidChrome
     baseColor={[0.2, 0.18, 0.5]}
     speed={1}
@@ -77,7 +81,6 @@ export const Home = () => {
 
     </div>
 
-    {/* Left Section */}
     <div className="md:col-span-6 col-span-12 h-96 flex justify-center items-center border border-gray-600/50 relative z-10">
       <h1 className="text-3xl p-6 font-satoshi tracking-tighter font-bold bg-clip-text text-transparent bg-gradient-to-b from-neutral-50 to-neutral-400 drop-shadow-lg">
       Keep Your Mind Organized: Your Second Brain for Everything
@@ -96,7 +99,7 @@ export const Home = () => {
 
         <div className="mt-24 grid grid-cols-12 gap-4">
   <div className="md:col-span-5 col-span-12 h-auto flex justify-center md:justify-end">
-    <SpotlightCard className="p-4 bg-transparent w-96 h-80 border border-white/20  flex flex-col justify-center gap-4" spotlightColor="rgba(82, 78, 183, 1)">
+    <SpotlightCard className="p-4 bg-transparent w-96 mx-2 h-80 border border-white/20  flex flex-col justify-center gap-4" spotlightColor="rgba(82, 78, 183, 1)">
       <div>
       <svg xmlns="http://www.w3.org/2000/svg" width="36" height="36" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" className="lucide lucide-bot text-white  border border-white/30 size-12 p-2 size-18 rounded-lg"><path d="M12 8V4H8"/><rect width="16" height="12" x="4" y="8" rx="2"/><path d="M2 14h2"/><path d="M20 14h2"/><path d="M15 13v2"/><path d="M9 13v2"/></svg>
       </div>
@@ -145,6 +148,36 @@ export const Home = () => {
 
             </SpotlightCard>
         </div>
+        </div>
+
+        <div className="flex flex-col gap-8 justify-center items-center my-24">
+          <h1 className="text-6xl md:text-7xl  font-satoshi tracking-tighter  font-black text-white">FAQ's</h1>
+          <div className="w-[40vw]">
+          <Accordion type="single" collapsible>
+        <AccordionItem className="w-full " value="item-1">
+          <AccordionTrigger className="text-white font-satoshi">What is Brainly?</AccordionTrigger>
+          <AccordionContent className="text-white font-satoshi">
+            Brainly is like a second brain  where user can store all their important online resources and ask their brain any questions about it.
+          </AccordionContent>
+        </AccordionItem>
+      </Accordion>
+      <Accordion type="single" collapsible>
+        <AccordionItem className="w-full " value="item-2">
+          <AccordionTrigger className="text-white font-satoshi"> Can I store all types of online content?</AccordionTrigger>
+          <AccordionContent className="text-white font-satoshi">
+          Yes, you can store various types of online content, including YouTube links, tweets, articles, notes, and more.          </AccordionContent>
+        </AccordionItem>
+      </Accordion>
+      <Accordion type="single" collapsible>
+        <AccordionItem className="w-full " value="item-3">
+          <AccordionTrigger className="text-white font-satoshi">How do I ask my Second Brain questions?</AccordionTrigger>
+          <AccordionContent className="text-white font-satoshi">
+          You can ask your Second Brain any question related to your stored resources. Just type your question in the ask bar, and it will retrieve the relevant data from your saved resources.          </AccordionContent>
+        </AccordionItem>
+      </Accordion>
+          </div>
+
+
         </div>
 
         <div className="mb-14">
