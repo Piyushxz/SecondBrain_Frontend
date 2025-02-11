@@ -66,7 +66,7 @@ export const Home = () => {
   <div className="w-[70vw] grid grid-cols-12 relative ">
     
     <div className="absolute inset-0 -z-10 opacity-40">
-    <div className="w-full md:w-1/2 h-full relative opacity-50">
+    <div className="w-full h-full relative opacity-50">
   <LiquidChrome
     baseColor={[0.2, 0.18, 0.5]}
     speed={1}
