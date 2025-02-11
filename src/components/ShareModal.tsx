@@ -4,7 +4,7 @@ import { showShareModal } from "../atoms"
 import { Button } from "./ui/Button"
 import { useState } from "react"
 import axios from "axios"
-
+import {motion} from "motion/react"
 import { CopyIcon } from "../icons/CopyIcon"
 import { toast } from "sonner"
 export const ShareModal = () =>{
@@ -47,7 +47,12 @@ export const ShareModal = () =>{
     return(
         <>  
 
-            <div className="h-screen w-screen fixed top-0 left-0 bg-[#0000004d] flex justify-center items-center">
+            <motion.div 
+                        initial={{opacity:0,scale:0.9}}
+                        transition={{ease:"easeInOut",duration:0.1}}
+                        exit={{opacity:0,scale:0.9}}
+                        animate={{opacity:1,scale:1}}
+            className="h-screen w-screen fixed top-0 left-0 bg-[#0000004d] flex justify-center items-center">
 
                 <div className="w-96 h-64 bg-backgroundColor rounded-lg  border border-white border-opacity-40">
                 <div className="flex justify-between p-2">
@@ -87,7 +92,7 @@ export const ShareModal = () =>{
 
 
                 </div>
-            </div>
+            </motion.div>
 
         </>
     )

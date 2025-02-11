@@ -10,7 +10,7 @@ import axios from "axios";
 import { isValidString } from "../../utils";
 import { Tags } from "./Tags";
 import { toast } from "sonner";
-
+import {motion} from "motion/react"
 type Tag = {
   id: string;
   tag: string;
@@ -95,7 +95,11 @@ export const ContentModal = () => {
   };
 
   return (
-    <div
+    <motion.div
+    initial={{opacity:0,scale:0.95}}
+    transition={{ease:"easeInOut",duration:0.1}}
+    exit={{opacity:0,scale:0.9}}
+    animate={{opacity:1,scale:1}}
       className={`bg-[#0000004d] h-screen w-screen fixed top-0 left-0 flex justify-center items-center transition-all duration-350 ${
         isModalOpen ? " bg-opacity-50 opacity-1" : " bg-opacity-100 opacity-0 "
       }`}
@@ -148,6 +152,6 @@ export const ContentModal = () => {
           </div>
         </form>
       </div>
-    </div>
+    </motion.div>
   );
 };

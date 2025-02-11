@@ -21,7 +21,7 @@ export const SearchResultCard = (props:cardProps) =>{
         <div className="px-4 h-24 border border-white rounded-lg">
             <div className="flex gap-2 p-2 ">
                 {iconStyles[props.variant]}
-                <h1 className="font-satoshi tracking-tighter font-black text-white text-lg pl-2">{props.title}</h1>
+                <h1 className="font-satoshi tracking-tighter font-semibold text-white text-lg pl-2">{props.title}</h1>
 
             </div>
         </div>

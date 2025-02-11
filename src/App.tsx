@@ -15,6 +15,7 @@ import { Layout } from "./components/Layout"
 import { Main } from "./pages/User/Main"
 import { LogoutModal } from "./components/LogoutModal"
 import { Toaster } from "sonner"
+import { AnimatePresence } from "motion/react"
 
 function App() {
 
@@ -32,6 +33,7 @@ function App() {
       } */}
     
     <Toaster richColors position='top-center'/>
+    <AnimatePresence>
     {
         isModalOpen &&
         <ContentModal/>
@@ -49,6 +51,8 @@ function App() {
       {
         isLogOutModalOpen && <LogoutModal/>
       }
+    </AnimatePresence>
+
   
       <Routes>
         <Route path="/" element={<Home/>}/>

@@ -6,7 +6,7 @@ import { activeIdForDeletion } from "../atoms"
 import { Button } from "./ui/Button"
 import axios from "axios"
 import { toast } from "sonner"
-
+import {motion} from "motion/react"
 export const DeleteContent = () =>{
     const activeId= useRecoilValue(activeIdForDeletion)
     const setDeleteModal = useSetRecoilState(showDeleteModal)
@@ -39,7 +39,12 @@ export const DeleteContent = () =>{
     return(
         <>
 
-            <div className="h-screen w-screen fixed top-0 left-0 bg-[#0000004d] flex justify-center items-center ">
+            <motion.div
+            initial={{opacity:0,scale:0.9}}
+            transition={{ease:"easeInOut",duration:0.1}}
+            exit={{opacity:0,scale:0.9}}
+            animate={{opacity:1,scale:1}}
+            className="h-screen w-screen fixed top-0 opacity-40 left-0 bg-[#0000004d] flex justify-center items-center ">
                 <div className=" w-80 bg-backgroundColor rounded-lg shawdow-2xl ">
                     <div className="flex justify-end p-2">
                         <div className="hover:bg-primaryColor2 p-2 transition ease-in-out rounded-lg " onClick={()=>{setDeleteModal(val =>!val)}}>
@@ -66,7 +71,7 @@ export const DeleteContent = () =>{
                         </div>
                     </div>
                 </div>
-            </div>
+            </motion.div>
         </>
     )
 }

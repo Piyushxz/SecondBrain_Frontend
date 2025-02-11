@@ -66,7 +66,7 @@ export const Home = () => {
 
         </div>
         <Features/>
-        <div className="w-screen flex justify-center mt-24">
+        <div className="w-full flex justify-center mt-24">
   <div className="w-[70vw] grid grid-cols-12 relative ">
     
     <div className="absolute inset-0 -z-10 opacity-40">
