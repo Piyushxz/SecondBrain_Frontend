@@ -152,7 +152,7 @@ export const Home = () => {
 
         <div className="flex flex-col gap-8 justify-center items-center my-24">
           <h1 className="text-6xl md:text-7xl  font-satoshi tracking-tighter  font-black text-white">FAQ's</h1>
-          <div className="w-[40vw]">
+          <div className="w-[70vw] md:[40vw]">
           <Accordion type="single" collapsible>
         <AccordionItem className="w-full " value="item-1">
           <AccordionTrigger className="text-white font-satoshi">What is Brainly?</AccordionTrigger>
