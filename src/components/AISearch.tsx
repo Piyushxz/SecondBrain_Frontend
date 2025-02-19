@@ -3,6 +3,7 @@ import { SearchIcon } from "../icons/SearchIcon"
 import {  useRef } from "react"
 import {  useSetRecoilState } from "recoil";
 import { queryLoading, queryResponse } from "../atoms";
+import { BE_URL } from "../config";
 export const AISearch =()=>{
     const inputRef = useRef<HTMLTextAreaElement | null>(null);
     const setQueryResponse = useSetRecoilState(queryResponse)
@@ -19,7 +20,7 @@ export const AISearch =()=>{
 
         try{
             setQueryLoading(true)
-            const response = await axios.post('https://secondbrain-backend-9trd.onrender.com/api/v1/search',{
+            const response = await axios.post(`${BE_URL}/api/v1/search`,{
                 query:inputRef.current?.value},
                 {
                     headers:{

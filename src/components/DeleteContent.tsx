@@ -7,6 +7,7 @@ import { Button } from "./ui/Button"
 import axios from "axios"
 import { toast } from "sonner"
 import {motion} from "motion/react"
+import { BE_URL } from "../config"
 export const DeleteContent = () =>{
     const activeId= useRecoilValue(activeIdForDeletion)
     const setDeleteModal = useSetRecoilState(showDeleteModal)
@@ -16,7 +17,7 @@ export const DeleteContent = () =>{
     const handleDeleteContent = async () => {
       try {
         const response = await toast.promise(
-          axios.delete("https://secondbrain-backend-9trd.onrender.com/api/v1/content", {
+          axios.delete(`${BE_URL}/api/v1/content`, {
             data: { contentId: activeId }, 
             headers: {
               Authorization: localStorage.getItem("token") || "",

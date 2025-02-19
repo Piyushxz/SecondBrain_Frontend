@@ -7,6 +7,7 @@ import axios from "axios"
 import { toast } from "sonner"
 import { useSetRecoilState } from "recoil"
 import { activeUsername } from "../atoms"
+import { BE_URL } from "../config"
 
 
 export const LoginModal = ()=>{
@@ -18,7 +19,7 @@ const setActiveUser = useSetRecoilState(activeUsername)
 const handleLoginClick = async () => {
     try {
         setIsLoading(true)
-        const response = await axios.post("https://secondbrain-backend-9trd.onrender.com/api/v1/signin", {
+        const response = await axios.post(`${BE_URL}/api/v1/signin`, {
             username,
             password
         });

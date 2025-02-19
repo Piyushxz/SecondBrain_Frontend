@@ -10,7 +10,7 @@ export const DocumentIcon = (props: IconProps) => {
                 viewBox="0 0 24 24"
                 stroke-width="1.5"
                 stroke="#FFFFFF"
-                className={`${iconStyles[props.variant]}`}
+                className={`${iconStyles[props.variant]} ${props.className} `}
             >
                 <path
                     stroke-linecap="round"

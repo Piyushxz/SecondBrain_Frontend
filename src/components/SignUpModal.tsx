@@ -4,6 +4,7 @@ import { Button } from "../components/ui/Button"
 import axios from "axios"
 import {motion} from "motion/react"
 import { toast } from "sonner"
+import { BE_URL } from "../config"
 
 
 export const SignUpModal = ()=>{
@@ -19,7 +20,7 @@ const [email,setIsEmail] = useState('')
         try{
 
             setIsLoading(true)
-            const response = await axios.post("https://secondbrain-backend-9trd.onrender.com/api/v1/signup",{
+            const response = await axios.post(`${BE_URL}/api/v1/signup`,{
                 email,
                 username,
                 password

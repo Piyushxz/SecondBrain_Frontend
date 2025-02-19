@@ -7,6 +7,7 @@ import axios from "axios"
 import {motion} from "motion/react"
 import { CopyIcon } from "../icons/CopyIcon"
 import { toast } from "sonner"
+import { BE_URL } from "../config"
 export const ShareModal = () =>{
 
     const setShareModal = useSetRecoilState(showShareModal)
@@ -18,7 +19,7 @@ export const ShareModal = () =>{
 
             setIsLoading(true)
 
-            const response = await axios.post("https://secondbrain-backend-9trd.onrender.com/api/v1/brain/share",{
+            const response = await axios.post(`${BE_URL}/api/v1/brain/share`,{
                 share:true
             },{
                 headers:{

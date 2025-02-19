@@ -5,9 +5,10 @@ import { ShareIcon } from "../../icons/ShareIcon"
 import { TwitterIcon } from "../../icons/TwitterIcon"
 import { YoutubeIcon } from "../../icons/YoutubeIcon"
 import { Tags } from "./Tags"
+import { LinkIcon } from "../../icons/LinkIcon"
 
 interface cardProps  {
-    variant :"link"|"tweet"|"youtube",
+    variant :"link"|"tweet"|"youtube" | "document",
     title:string,
     link:string,
     content:string,
@@ -19,9 +20,11 @@ interface cardProps  {
 }
 
 const iconStyles={
-    link:  <DocumentIcon variant="lg"/>,
+    link:  <LinkIcon variant="lg"/>,
     youtube:<YoutubeIcon variant="lg"/>,
-    tweet:<TwitterIcon variant="lg"/>
+    tweet:<TwitterIcon variant="lg"/>,
+    document:<DocumentIcon variant="lg"/>
+
 
 }
 
@@ -66,8 +69,15 @@ export const Card = (props:cardProps) =>{
 
             <div className="">
                 {
+                    props.variant==="document"?
+                        <div className="pl-4 pt-2">
+                            <span className="font-montserrat text-[#B7B7B7] font-sm">{props.content}</span>
+    
+                        </div>
+                                        :
                     props.variant==="link"?
                     <div className="pl-4 pt-2">
+                        <span className="font-montserrat text-[#B7B7B7] font-sm">{props.link}</span>
                         <span className="font-montserrat text-[#B7B7B7] font-sm">{props.content}</span>
 
                     </div>

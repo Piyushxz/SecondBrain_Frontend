@@ -11,6 +11,7 @@ import { isValidString } from "../../utils";
 import { Tags } from "./Tags";
 import { toast } from "sonner";
 import {motion} from "motion/react"
+import { BE_URL } from "../../config";
 type Tag = {
   id: string;
   tag: string;
@@ -70,7 +71,7 @@ export const ContentModal = () => {
     try {
       console.log({title,link,contentModalT,content,tagsList})
        const response = await axios.post(
-         "https://secondbrain-backend-9trd.onrender.com/api/v1/content",
+        `${BE_URL}/api/v1/content`,
          {
            title,
            link,
@@ -122,6 +123,12 @@ export const ContentModal = () => {
           <div>
             <Input label="Link" value={link} htmlFor="link" onChange={handleLinkChange} />
           </div>
+
+          {contentModalT === "document" && (
+            <div>
+              <Input label="Content" value={content} htmlFor="content" onChange={handleContentChange} />
+            </div>
+          )}
           <div className="flex">
             <Input label="Tags" htmlFor="tags" value={tags} onChange={handleTagsChange} />
             <button
@@ -131,6 +138,7 @@ export const ContentModal = () => {
               Add
             </button>
           </div>
+
           <div className="flex gap-2 m-4 flex-wrap">
             {finalTags.map((tag) => (
               <Tags
@@ -141,11 +149,7 @@ export const ContentModal = () => {
               />
             ))}
           </div>
-          {contentModalT === "link" && (
-            <div>
-              <Input label="Content" value={content} htmlFor="content" onChange={handleContentChange} />
-            </div>
-          )}
+
 
           <div className="flex justify-center pl-4 pr-4 py-4 border-t border-gray-700 mt-8">
             <Button variant="primary" size="lg" text="Add Content" type="submit" />

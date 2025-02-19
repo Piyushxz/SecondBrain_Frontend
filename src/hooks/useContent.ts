@@ -2,6 +2,7 @@ import axios from "axios";
 import { useEffect, useState } from "react";
 import { useRecoilValue } from "recoil";
 import { activeContentType } from "../atoms";
+import { BE_URL } from "../config";
 
 export const useContent = () => {
   const activeType = useRecoilValue(activeContentType);
@@ -11,7 +12,7 @@ export const useContent = () => {
   async function getData() {
     try {
       const response = await axios.get(
-        `https://secondbrain-backend-9trd.onrender.com/api/v1/content/${activeType}`,
+        `${BE_URL}/api/v1/content/${activeType}`,
         {
           headers: {
             Authorization: token,

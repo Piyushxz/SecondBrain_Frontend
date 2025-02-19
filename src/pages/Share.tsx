@@ -2,6 +2,7 @@ import axios from "axios"
 import { useEffect, useState } from "react"
 import { useParams } from "react-router-dom"
 import { Card } from "../components/ui/Card"
+import { BE_URL } from "../config"
 export const Share = ()=>{
 
     const {hash} = useParams()
@@ -11,7 +12,7 @@ export const Share = ()=>{
         (async()=>{
 
             try{
-                const response = await axios.get(`https://secondbrain-backend-9trd.onrender.com/api/v1/brain/${hash}`)
+                const response = await axios.get(`${BE_URL}/api/v1/brain/${hash}`)
 
 
                 console.log(response)
