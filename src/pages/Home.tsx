@@ -18,6 +18,9 @@ export const Home = () => {
     const handleButtonClick = ()=>{
         navigate("/signin")
     }
+    const handleDemoClick = ()=>{
+      window.open("https://www.youtube.com/watch?v=EoOIZHgn1xk")
+    }
     return (
     <>
 
@@ -69,7 +72,7 @@ export const Home = () => {
                 <motion.button  initial={{opacity:0,y:30}}
                 animate={{opacity:1.2,y:0}}
                 transition={{delay:0.8,ease:"easeInOut",}}
-                onClick={handleButtonClick}
+                onClick={handleDemoClick}
                  className=" flex gap-2 items-center mt-6 px-8 py-3 text- rounded-lg font-satoshi font-normal  tracking-tighter  bg-white hover:bg-opacity-40 opacity-50">
                     <VideoIcon className="text-backgroundColor"/>
                     <div className="text-inherit">                    Watch Demo                  </div>
