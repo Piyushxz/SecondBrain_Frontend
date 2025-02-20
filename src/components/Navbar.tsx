@@ -1,15 +1,18 @@
 import { Button } from "./ui/Button"
 import { ShareIcon } from "../icons/ShareIcon"
 import { PlusIcon } from "../icons/PlusIcon"
-
 import { useRecoilValue, useSetRecoilState } from "recoil"
-import { activeUsername, showShareModal, toggleModal } from "../atoms"
+import { activeUsername, isLogoutModalOpen, showShareModal, toggleModal } from "../atoms"
 import { MobileSidebar } from "./MobileSidebar"
+import { CircleUserRound, LogOut } from "lucide-react"
+import { DropdownMenu, DropdownMenuContent, DropdownMenuItem, DropdownMenuLabel, DropdownMenuSeparator, DropdownMenuTrigger } from "./ui/dropdownMenu"
 
 export const Navbar = () => {
     const setModal = useSetRecoilState(toggleModal)
     const setShareModal = useSetRecoilState(showShareModal)
     const username = useRecoilValue(activeUsername)
+    const setIsLogoutModalOpen = useSetRecoilState(isLogoutModalOpen)
+
     const handleOpenModal = () => {
         setModal((val) => !val)
     }
@@ -46,7 +49,26 @@ export const Navbar = () => {
                         onClick={handleOpenModal}
                         text="Add Content"
                     />
-                </div>
+                         <DropdownMenu  >
+                        <DropdownMenuTrigger>       
+                        <div className="p-3 rounded-full bg-primaryColor">
+               
+                              <CircleUserRound className="text-white"/>
+                        </div>
+                        </DropdownMenuTrigger>
+                        <DropdownMenuContent className="text-white font-satoshi bg-secondaryColor">
+                            <DropdownMenuLabel >My Account</DropdownMenuLabel>
+                            <DropdownMenuSeparator className="text-white bg-white" />
+                     
+                            <DropdownMenuItem onClick={()=>setIsLogoutModalOpen(true)}
+                            ><div className="flex items-center gap-2 hover:opacity-50">
+                                <LogOut className="text-red-500"/>
+                                <h1 className="text-red-500 font-satoshi text-sm">Logout</h1>
+                                </div></DropdownMenuItem>
+                        </DropdownMenuContent>
+                        </DropdownMenu>
+                    </div>
+                
             </div>
 
             <div className="md:hidden block mt-4 px-4 flex gap-4">

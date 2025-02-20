@@ -1,7 +1,7 @@
 
 import { Card } from "./ui/Card"
 import { useContent } from "../hooks/useContent"
-import { queryLoading, queryResponse, showDeleteModal } from "../atoms"
+import {  queryLoading, queryResponse, showDeleteModal } from "../atoms"
 import { Navbar } from "./Navbar"
 import {  useRecoilValue, useSetRecoilState } from "recoil"
 import { activeIdForDeletion } from "../atoms"
@@ -17,6 +17,7 @@ export const MainContent= ()=>{
     console.log(isLoading)
     const setDeleteModal = useSetRecoilState(showDeleteModal)
     const setActiveId = useSetRecoilState(activeIdForDeletion)
+
     const contents = useContent();
 
     const handleDeleteContent = (id:string)=>{

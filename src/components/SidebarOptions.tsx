@@ -2,14 +2,12 @@ import { TwitterIcon } from "../icons/TwitterIcon"
 import { YoutubeIcon } from "../icons/YoutubeIcon"
 import { LinkIcon } from "../icons/LinkIcon"
 import { HomeIcon } from "../icons/HomeIcons"
-import { LogoutIcon } from "../icons/LogoutIcon"
-import { useRecoilState ,useSetRecoilState} from "recoil"
-import { activeContentType ,isLogoutModalOpen} from "../atoms"
+import { useRecoilState } from "recoil"
+import { activeContentType } from "../atoms"
 
 export const SidebarOption = ()=>{
 
     const [contentType,setContentType] = useRecoilState(activeContentType)
-    const setIsLogoutModalOpen = useSetRecoilState(isLogoutModalOpen)
 
     return(
         <>
@@ -40,12 +38,7 @@ export const SidebarOption = ()=>{
                             <h1 className="pl-4 text-gray-300 text-lg font-satoshi tracking-tighter font-xl">Links</h1>
                         </div>
                     </li>
-                    <li onClick={()=>setIsLogoutModalOpen(true)}>
-                    <div className="flex  pl-6 hover:bg-primaryColor2 p-4">
-                            <LogoutIcon variant="lg"/>
-                            <h1 className="pl-4 text-gray-300 text-lg font-satoshi tracking-tighter font-xl">LogOut</h1>
-                        </div>
-                    </li> 
+
                 </ul>
             </div>
         </>
