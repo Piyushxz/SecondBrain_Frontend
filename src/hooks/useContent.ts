@@ -7,6 +7,7 @@ import { BE_URL } from "../config";
 export const useContent = () => {
   const activeType = useRecoilValue(activeContentType);
   const [content, setContent] = useState([]);
+  const [username,setUser] = useState("")
   const token = localStorage.getItem("token");
 
   async function getData() {
@@ -19,6 +20,8 @@ export const useContent = () => {
           },
         }
       );
+      setUser(response.data.contents[0].userId.username)
+
       if (JSON.stringify(response.data.contents) !== JSON.stringify(content)) {
         setContent(response.data.contents);
       }
@@ -35,5 +38,5 @@ export const useContent = () => {
     return () => clearInterval(intervalId);
   }, [activeType]);
 
-  return content;
+  return {content,username};
 };

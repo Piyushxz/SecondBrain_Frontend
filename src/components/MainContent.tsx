@@ -18,7 +18,7 @@ export const MainContent= ()=>{
     const setDeleteModal = useSetRecoilState(showDeleteModal)
     const setActiveId = useSetRecoilState(activeIdForDeletion)
 
-    const contents = useContent();
+    const {content,username} = useContent();
 
     const handleDeleteContent = (id:string)=>{
         setDeleteModal(val =>!val)
@@ -29,7 +29,7 @@ export const MainContent= ()=>{
         <>
         
         <div className="w-full h-screen bg-background px-6 pt-8 md:ml-80 ">
-            <Navbar/>
+            <Navbar username = {username}/>
 
             <div className="flex flex-col  justify-center items-center mt-4">
             <AISearch/>
@@ -54,7 +54,7 @@ export const MainContent= ()=>{
                 <div className=" flex flex-wrap md:flex-row flex-col ">
                 {
                     
-                    contents.map(({_id,type,link,content,title,tags,createdAt})=>
+                    content.map(({_id,type,link,content,title,tags,createdAt})=>
                         
                         <Card key={_id}
                         variant={type}

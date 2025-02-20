@@ -51,12 +51,8 @@ export const SearchResultCard = (props:cardProps) =>{
                     </div>
                     :
                     props.variant==="tweet"?
-                    <div className=" flex justify-center object-fit  justify-center">
+                    <span className="font-montserrat text-[#B7B7B7] font-sm text-sm">{props.link}</span>
 
-                      { props.link && <blockquote className="twitter-tweet ">
-                        <a href={props.link.replace("x.com","twitter.com")}></a> 
-                        </blockquote>} 
-                    </div>
                     :
                     null
 

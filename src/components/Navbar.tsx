@@ -1,16 +1,15 @@
 import { Button } from "./ui/Button"
 import { ShareIcon } from "../icons/ShareIcon"
 import { PlusIcon } from "../icons/PlusIcon"
-import { useRecoilValue, useSetRecoilState } from "recoil"
-import { activeUsername, isLogoutModalOpen, showShareModal, toggleModal } from "../atoms"
+import {  useSetRecoilState } from "recoil"
+import {  isLogoutModalOpen, showShareModal, toggleModal } from "../atoms"
 import { MobileSidebar } from "./MobileSidebar"
 import { CircleUserRound, LogOut } from "lucide-react"
 import { DropdownMenu, DropdownMenuContent, DropdownMenuItem, DropdownMenuLabel, DropdownMenuSeparator, DropdownMenuTrigger } from "./ui/dropdownMenu"
 
-export const Navbar = () => {
+export const Navbar = (props:{username:string}) => {
     const setModal = useSetRecoilState(toggleModal)
     const setShareModal = useSetRecoilState(showShareModal)
-    const username = useRecoilValue(activeUsername)
     const setIsLogoutModalOpen = useSetRecoilState(isLogoutModalOpen)
 
     const handleOpenModal = () => {
@@ -28,7 +27,7 @@ export const Navbar = () => {
 
               
                 <div className="col-span-3 md:col-span-5">
-                    <h1 className="font-satoshi tracking-tighter font-extrabold md:text-4xl text-3xl text-white">Welcome back , {username}!</h1>
+                    <h1 className="font-satoshi tracking-tighter font-extrabold md:text-4xl text-3xl text-white">Welcome back , {props.username}!</h1>
                 </div>
                 <div className="md:hidden block">
                     <MobileSidebar />

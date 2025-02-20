@@ -9,6 +9,7 @@ import { BrainIcon } from "../icons/BrainIcon";
 import SpotlightCard from "../components/SpotlightCard/SpotlightCard";
 import LiquidChrome from "../Backgrounds/LiquidChrome/LiquidChrome";
 import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from "../components/ui/Accordian";
+import { VideoIcon } from "lucide-react";
 
 
 export const Home = () => {
@@ -53,6 +54,8 @@ export const Home = () => {
 
                  className="font-satoshi  tracking-tighter  md:text-xl text-lg font-bold text-white/70  max-w-lg sm:max-w-lg text-center">
             "Your Second Brain for the Web – Save, Organize & Recall Links, Tweets, Notes, and More Effortlessly!"                </motion.h2>
+               <div className="flex gap-2">
+
                 <motion.button  initial={{opacity:0,y:30}}
                 animate={{opacity:1.2,y:0}}
                 transition={{delay:0.8,ease:"easeInOut",}}
@@ -61,7 +64,19 @@ export const Home = () => {
                     <ArrowIcon variant="sm"/>
                     <div>                    Start Now                    </div>
                 </motion.button>
-            
+
+                
+                <motion.button  initial={{opacity:0,y:30}}
+                animate={{opacity:1.2,y:0}}
+                transition={{delay:0.8,ease:"easeInOut",}}
+                onClick={handleButtonClick}
+                 className=" flex gap-2 items-center mt-6 px-8 py-3 text- rounded-lg font-satoshi font-normal  tracking-tighter  bg-white hover:bg-opacity-40 opacity-50">
+                    <VideoIcon className="text-backgroundColor"/>
+                    <div className="text-inherit">                    Watch Demo                  </div>
+                </motion.button>
+
+                </div>
+
             </div>
 
         </div>
