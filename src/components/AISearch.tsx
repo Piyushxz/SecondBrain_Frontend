@@ -4,6 +4,7 @@ import {  useRef } from "react"
 import {  useSetRecoilState } from "recoil";
 import { queryLoading, queryResponse } from "../atoms";
 import { BE_URL } from "../config";
+import { toast } from "sonner";
 export const AISearch =()=>{
     const inputRef = useRef<HTMLTextAreaElement | null>(null);
     const setQueryResponse = useSetRecoilState(queryResponse)
@@ -37,6 +38,7 @@ export const AISearch =()=>{
         }
         catch(e){
             setQueryLoading(false)
+            toast.error("Server error")
             console.log(e)
         }
 

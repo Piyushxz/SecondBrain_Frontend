@@ -4,7 +4,7 @@ import { SearchResultCard } from "./ui/SearchResultCard"
 export const SearchResult = ()=>{
 
     const response = useRecoilValue(queryResponse)
-
+    console.log(response)
 
     return(
         <div className="grid grid-cols-12 md:w-[70vw] w-[80vw] mt-4 gap-4">
@@ -14,8 +14,8 @@ export const SearchResult = ()=>{
                 <p className="">{response?.data.answer}</p>
             </div>
         </div>
-
-        <SearchResultCard variant={response?.data.sources[0].type} title={response?.data.sources[0].content}/>
+        
+        <SearchResultCard variant={response?.data.sources[0].type} title={response?.data.sources[0].content} link={response?.data.sources[0].url} content={response?.data.sources[0].content} description={response?.data.sources[0].description}/>
     </div>
     )
 }

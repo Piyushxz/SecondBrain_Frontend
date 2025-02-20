@@ -67,10 +67,10 @@ export const Card = (props:cardProps) =>{
             </div>
             
 
-            <div className="">
+            <div className=" max-w-80 max-h-72  overflow-y-auto">
                 {
                     props.variant==="document"?
-                        <div className="pl-4 pt-2">
+                        <div className="px-4 pt-2 ">
                             <span className="font-montserrat text-[#B7B7B7] font-sm">{props.content}</span>
     
                         </div>
@@ -113,7 +113,7 @@ export const Card = (props:cardProps) =>{
                 }
             </div>
             <div className="pl-4 pt-1">
-                <h1 className="font-montserrat text-[#B7B7B7] font-sm text-sm">Created At {props.createdAt}</h1>
+                <h1 className="font-montserrat text-gray-600/80 font-sm text-sm">Created At {props.createdAt}</h1>
             </div>
         </div>
         </>
